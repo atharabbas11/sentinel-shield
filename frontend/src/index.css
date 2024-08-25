@@ -1,0 +1,195 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css or a similar global CSS file */
+
+/* Float effect for images (Home Page Image) */
+@keyframes floatEffect {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+
+.floatEffect {
+  animation: floatEffect 3s infinite ease-in-out;
+}
+
+
+/* CSS Animations */
+/* Right-to-Left Slide-In Animation (About Us) */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+/* Left-to-Right Slide-In Animation (Contact Us) */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
+}
+
+/* Fade-In Animation (Features) */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+
+/* Loading.css */
+/* .loading {
+  display: inline-block;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.loading::after {
+  content: '...';
+  display: inline-block;
+  position: absolute;
+  animation: ellipsis 1.5s infinite;
+}
+
+@keyframes ellipsis {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(10px);
+  }
+  66% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(30px);
+  }
+}
+
+.loading::before {
+  content: ' ';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  animation: dot-blink 1.5s infinite step-start;
+  position: absolute;
+}
+
+@keyframes dot-blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading span {
+  display: inline-block;
+  margin-left: 0.5em;
+} */
+
+
+
+
+/* Loading.css */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em; /* Adjust as needed */
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: #333; /* Change text color to match your design */
+  position: absolute;
+  padding-left: 1.5em; /* Space for spinner */
+  padding-top: 1.1em; /* Space for spinner and text */
+}
+
+.loading::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-top: 2px solid #333; /* Color of the spinner */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading.css */
+.loading-spinner {
+  width: 1.5em;
+  height: 1.5em;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  border-top: 3px solid #333; /* Color of the spinner */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
