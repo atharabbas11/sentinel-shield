@@ -79,7 +79,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
         },
       };
 
-      const { data } = await axios.post(`${apiUrl}/api/users/login`, { email, password }, config);
+      const { data } = await axios.post(`${apiUrl}api/users/login`, { email, password }, config);
 
       // Store the token and set login state
       localStorage.setItem('authToken', data.token);
