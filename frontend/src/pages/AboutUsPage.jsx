@@ -64,23 +64,6 @@ const AboutUsPage = () => {
 
       {/* <LoadingBar loading={loading} /> */}
       <main className="relative z-10 container mx-auto mt-8 p-4">
-        {/* <section id="about" className="my-12 mt-20" ref={aboutRef}>
-          <h1 className="text-5xl font-semibold text-center mb-8 text-white">About</h1>
-          <div className="container mx-auto flex flex-col md:flex-row items-center">
-            <div className="md:w-3/5 mb-8 md:mb-0 md:pl-8 md:pr-28 lg:pl-14 xl:pl-44">
-              <img src={aboutus} alt="About Us" />
-            </div>
-            <div className={`w-full md:w-2/5 text-center md:text-left p-2 ${isVisible.about ? 'slide-in-right' : ''}`}>
-              <h2 className="text-4xl font-semibold mb-6 text-gray-300">About Us</h2>
-              <p className="text-lg mb-4 xl:pr-20 text-white">
-                We are passionate about the art and science of steganography. Our mission is to provide powerful tools that help you communicate securely and privately.
-              </p>
-              <button className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 transition">
-                Learn More
-              </button>
-            </div>
-          </div>
-        </section> */}
         <section id="aboutus" className="my-12 mt-20" ref={featuresRef}>
           {/* About Section */}
           <div className="relative">
@@ -101,7 +84,6 @@ const AboutUsPage = () => {
                   </div>
                 </div>
               </div>
-
               <div className="mt-12 sm:mt-16 lg:mt-0">
                 <div className="flex justify-center mx-auto">
                   <img width="647" height="486" style={{ color: "transparent" }} alt='aboutusimg' src={aboutus}/>
