@@ -184,7 +184,7 @@ const EncryptionImagePage = () => {
                         {loading && (
                             <div className="loading-container">
                                 <div className="loading-spinner mb-12"></div>
-                                <p className="mt-2 text-white">Processing...</p>
+                                <p className="mt-2 text-white">Encrypting...</p>
                             </div>
                         )}
                         {encryptedImageUrl && !loading && (
