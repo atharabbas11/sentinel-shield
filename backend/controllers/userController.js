@@ -80,7 +80,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
 
     if (user) {
-        const protocol = req.secure ? 'https' : 'http';
+        const protocol = 'https';
         const profileImageUrl = user.profileImage ? `${protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
         
         res.json({
