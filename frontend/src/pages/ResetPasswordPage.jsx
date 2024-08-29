@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-// import { BarLoader } from 'react-spinners';
 import LoadingBar from '../components/LoadingBar';
 
 const apiUrl = process.env.REACT_APP_API_URL;
