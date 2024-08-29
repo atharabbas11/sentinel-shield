@@ -80,8 +80,8 @@ const getUserProfile = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
 
     if (user) {
-         // Construct the profile image URL with forward slashes to get correcr url from DB
-         const profileImageUrl = user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
+        const protocol = req.secure ? 'https' : 'http';
+        const profileImageUrl = user.profileImage ? `${protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
         
         res.json({
             _id: user._id,
