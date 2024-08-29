@@ -22,7 +22,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
           'Authorization': `Bearer ${token}`
         }
       };
-      const { data } = await axios.get(`${apiUrl}api/users/profile`, config);
+      const { data } = await axios.get(`${apiUrl}/api/users/profile`, config);
       // You can store the fetched user profile in context or state, as per your needs.
       console.log('User Profile:', data);
     } catch (error) {
@@ -79,7 +79,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
         },
       };
 
-      const { data } = await axios.post(`${apiUrl}api/users/login`, { email, password }, config);
+      const { data } = await axios.post(`${apiUrl}/api/users/login`, { email, password }, config);
 
       // Store the token and set login state
       localStorage.setItem('authToken', data.token);
