@@ -24,17 +24,22 @@ connectDB();
 
 // Security and CORS Middleware
 app.use(helmet());
+
+// Read the allowed origin from the environment variable
+const allowedOrigin = process.env.ALLOWED_ORIGIN;
+
+// Configure CORS
 app.use(cors({
-    origin: (origin, callback) => {
-        const allowedOrigins = ['http://localhost:3000', 'https://sentinel-shield.onrender.com/'];
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true
+  origin: (origin, callback) => {
+    // Check if the origin matches the allowed origin or if the origin is not present (e.g., server-to-server requests)
+    if (origin === allowedOrigin || !origin) {
+      callback(null, true);  // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS'));  // Deny the request
+    }
+  },
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',  // Allowed HTTP methods
+  credentials: true  // Allow cookies to be sent with cross-origin requests
 }));
 
 // app.use(cors({
@@ -64,13 +69,14 @@ app.use('/api/contact', contactRoutes);
 // Serve static files from the uploads directory
 // app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Middleware to set CORS headers
 app.use('/uploads', (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // Allow from your frontend URL
+    res.header('Access-Control-Allow-Origin', allowedOrigin); // Allow from your frontend URL
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.header('Cross-Origin-Resource-Policy', 'cross-origin'); // Allows cross-origin requests
     next();
-  }, express.static(path.join(__dirname, 'uploads')));
+}, express.static(path.join(__dirname, 'uploads')));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
