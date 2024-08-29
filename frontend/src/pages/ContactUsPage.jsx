@@ -2,9 +2,9 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
-import backgroundImage from '../images/bg-1.png'; // Adjust the path according to your project structure
-import contactus from '../images/contactus.png'; // Adjust the path
-import LoadingBar from '../components/LoadingBar'; // Ensure the path is correct based on your project structure
+import backgroundImage from '../images/bg-1.png'; 
+import contactus from '../images/contactus.png';
+import LoadingBar from '../components/LoadingBar';
 import { IoMailOutline } from "react-icons/io5";
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
@@ -215,99 +215,3 @@ const ContactUsPage = () => {
 };
 
 export default ContactUsPage;
-
-
-
-  // return (
-  //   <div className="min-h-screen relative bg-custom-bg">
-  //     {/* Initial image */}
-  //     <div
-  //       className="fixed inset-0 z-0"
-  //       style={{
-  //         backgroundImage: `url(${backgroundImage})`,
-  //         backgroundSize: 'cover',
-  //         backgroundPosition: 'center',
-  //         height: '100vh', // Ensure it covers the full viewport height
-  //       }}
-  //     ></div>
-  //     <LoadingBar loading={loading} />
-  //     <main className="relative z-10 container mx-auto mt-8 p-4">
-  //       <section id="contact" className="my-12 mt-20" ref={contactRef}>
-  //         <h1 className="text-5xl font-semibold text-center mb-8 text-white">Contact</h1>
-  //         <div className="container mx-auto flex flex-col md:flex-row items-center">
-  //           <div className={`w-full md:w-2/5 text-center md:text-right p-2 ${isVisible.contact ? 'slide-in-left' : ''}`}>
-  //             <h1 className="text-4xl font-semibold mb-6 text-gray-300">Contact Us</h1>
-  //             <p className="text-lg mb-4 xl:pl-20 text-white">
-  //               Have questions or feedback? We'd love to hear from you. Reach out to us at{' '}
-  //               <a href="mailto:testingmyproject101@gmail.com" className="text-blue-600 hover:underline break-words">
-  //                 testingmyproject101@gmail.com
-  //               </a>.
-  //             </p>
-  //             <button className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 transition">Learn More</button>
-  //           </div>
-  //           <div className="md:w-3/5 mb-8 md:mb-0 md:pl-8 md:pr-8 lg:pr-20 lg:pl-44">
-  //             <img src={contactus} alt="Contact Us" />
-  //           </div>
-  //         </div>
-  //       </section>
-
-
-  //       <section class="body-font relative text-gray-400">
-  //         <div class="container mx-auto px-5 py-24">
-  //           <div class="mb-12 flex w-full flex-col text-center">
-  //           <h1 className='font-bold lg:text-7xl text-4xl text-white mb-6'>Got questions? <br></br>We'll answer.</h1>
-  //             <p class="mx-auto text-base leading-relaxed lg:w-2/3 text-white">Feel free to reach out to us! Whether you have a question, feedback, or a collaboration proposal, we'd love to hear from you.</p>
-  //           </div>
-
-  //           <div class="mx-auto md:w-2/3 lg:w-1/2 bg-gray-900 opacity-70">
-  //             <div class="flex flex-wrap rounded border border-none ">
-  //               <div class="w-full p-2 mt-5 mr-5 ml-5 mb-5">
-  //                 <div class="relative">
-  //                   <input 
-  //                     type="text" 
-  //                     id="name" 
-  //                     name="name" 
-  //                     placeholder="Name"
-  //                     class="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-2 px-3 text-gray-100 placeholder-gray-400 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-500" 
-  //                   />
-  //                 </div>
-  //               </div>
-
-  //               <div class="w-full p-2 mr-5 ml-5 mb-3">
-  //                 <div class="relative">
-  //                   <input 
-  //                     type="email" 
-  //                     id="email" 
-  //                     name="email" 
-  //                     placeholder="Email"
-  //                     class="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-2 px-3 text-gray-100 placeholder-gray-400 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
-  //                   />
-  //                 </div>
-  //               </div>
-
-  //               <div class="w-full p-2 mt-4 mr-5 ml-5 mb-1">
-  //                 <div class="relative">
-  //                   <textarea 
-  //                     id="message" 
-  //                     name="message"
-  //                     placeholder="Message" 
-  //                     class="peer h-32 w-full resize-none rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-2 px-3 text-gray-100 placeholder-gray-400 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
-  //                   >
-  //                   </textarea>
-  //                 </div>
-  //               </div>
-
-  //               <div class="w-full p-2 mb-3">
-  //                 <button 
-  //                   class="mx-auto flex rounded border-0 bg-indigo-500 py-2 px-8 text-lg text-white hover:bg-indigo-600 focus:outline-none">
-  //                   Button
-  //                 </button>
-  //               </div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </section>
-  //     </main>
-  //   </div>
-  // );
-
