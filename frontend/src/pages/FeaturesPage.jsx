@@ -43,7 +43,6 @@ const FeaturesPage = () => {
                     <h2 className="text-3xl font-bold tracking-tight text-white">Secure Encryption :</h2>
                     <p className="mt-4 text-lg text-gray-300">Encrypt your messages with advanced algorithms to ensure complete privacy and security.</p>
                     <div className="mt-6">
-                      {/* <a className="inline-flex rounded-lg bg-pink-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-pink-600 hover:bg-pink-700 hover:ring-pink-700" href="#">Learn More</a> */}
                       <button className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="#">Learn More</button>
                     </div>
                   </div>
