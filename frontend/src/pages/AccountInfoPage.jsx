@@ -96,7 +96,6 @@ const AccountInfoPage = () => {
         },
       };
 
-      // const { data } = await axios.post('/api/users/request-email-change', { newEmail }, config);
       await axios.post(`${apiUrl}/api/users/request-email-change`, { newEmail }, config);
       setOtpSent(true);
       setEmailChangeError('');
@@ -206,21 +205,6 @@ const AccountInfoPage = () => {
             {user ? (
               <>
                 <div className="flex justify-center mb-4 relative">
-                  {/* {profileImage ? (
-                    <img
-                      src={`${profileImage}`}
-                      alt="Profile"
-                      className="w-28 h-28 rounded-full absolute bottom-0"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = profilePlaceholder;
-                      }}
-                    />
-                  ) : (
-                    <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center">
-                      <img src={profilePlaceholder} alt="Placeholder" />
-                    </div>
-                  )}  */}
                   <img
                     src={profileImage || profilePlaceholder}
                     alt={profileImage ? "Profile" : "Placeholder"}
