@@ -40,7 +40,7 @@ const AccountInfoPage = () => {
           },
         };
         const { data } = await axios.get(`${apiUrl}/api/users/profile`, config);
-        console.log('Fetched user data:', data); // Log fetched data
+        // console.log('Fetched user data:', data); // Log fetched data (only for reference)
         setUser(data);
         setProfileImage(data.profileImage); // Ensure this is set from the fetched user data
       } catch (error) {
