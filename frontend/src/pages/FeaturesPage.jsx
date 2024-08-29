@@ -1,59 +1,16 @@
 // src/pages/FeaturesPage.js
 import React from 'react';
-import backgroundImage from '../images/bg-1.png'; // Adjust the path according to your project structure
+import backgroundImage from '../images/bg-1.png'; 
 import feature1 from '../images/feature-1.jpg';
 import feature2 from '../images/feature-2.jpg';
 import feature3 from '../images/feature-3.jpg';
-
-// import LoadingBar from './LoadingBar'; // Ensure the path is correct based on your project structure
+// import LoadingBar from './LoadingBar';
 import { IoLockClosedOutline } from "react-icons/io5";
 import { VscSymbolInterface } from "react-icons/vsc";
 import { FcDataProtection } from "react-icons/fc";
 
 
 const FeaturesPage = () => {
-
-  // const [loading, setLoading] = useState(false);
-
-  // Intersection Observer setup
-  // const [isVisible, setIsVisible] = useState({
-  //   features: false
-  // });
-
-  // const featuresRef = useRef(null);
-  // const aboutRef = useRef(null);
-  // const contactRef = useRef(null);
-
-  // useEffect(() => {
-  //   const featuresElement = featuresRef.current;
-  //   const aboutElement = aboutRef.current;
-  //   const contactElement = contactRef.current;
-
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
-  //           observer.unobserve(entry.target);
-  //         }
-  //       });
-  //     },
-  //     {
-  //       threshold: 0.1,
-  //     }
-  //   );
-
-  //   if (featuresElement) observer.observe(featuresElement);
-  //   if (aboutElement) observer.observe(aboutElement);
-  //   if (contactElement) observer.observe(contactElement);
-
-  //   return () => {
-  //     if (featuresElement) observer.unobserve(featuresElement);
-  //     if (aboutElement) observer.unobserve(aboutElement);
-  //     if (contactElement) observer.unobserve(contactElement);
-  //   };
-  // }, []);
-
   return (
     <div className="min-h-screen relative bg-custom-bg">
       {/* Initial image */}
@@ -99,7 +56,6 @@ const FeaturesPage = () => {
                     width="647" height="486"
                     style={{ color: "transparent" }}
                     className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                    // src="https://images.unsplash.com/photo-1569144157591-c60f3f82f137"
                     src={feature1}
                     alt='feature1'
                   />
@@ -135,7 +91,6 @@ const FeaturesPage = () => {
                     width="647" height="486"
                     style={{ color: "transparent" }}
                     className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                    // src="https://images.unsplash.com/photo-1599134842279-fe807d23316e"
                     src={feature2}
                     alt='feature2'
                   />
@@ -171,7 +126,6 @@ const FeaturesPage = () => {
                     width="647" height="486"
                     style={{ color: "transparent" }}
                     className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                    // src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e"
                     src={feature3}
                     alt='feature3'
                   />
