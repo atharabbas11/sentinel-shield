@@ -52,7 +52,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Logging
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 // Body parser middleware
 app.use(express.json());
