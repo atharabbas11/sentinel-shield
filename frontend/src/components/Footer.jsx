@@ -59,11 +59,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact Information */}
-          {/* <div className="text-center mb-4">
-            <p className="text-gray-400">Email us at: <a href="mailto:testingmyproject101@gmail.com" className="text-gray-300 hover:underline">testingmyproject101@gmail.com</a></p>
-          </div> */}
-
           {/* Copyright Notice */}
           <div className='flex justify-between flex-wrap'>
             <p className="text-gray-400">&copy; 2024 Sentinel Shield. All rights reserved.</p>
