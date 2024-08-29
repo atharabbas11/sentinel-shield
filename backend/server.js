@@ -30,16 +30,10 @@ const allowedOrigin = process.env.ALLOWED_ORIGIN;
 
 // Configure CORS
 app.use(cors({
-  origin: (origin, callback) => {
-    // Check if the origin matches the allowed origin or if the origin is not present (e.g., server-to-server requests)
-    if (origin === allowedOrigin || !origin) {
-      callback(null, true);  // Allow the request
-    } else {
-      callback(new Error('Not allowed by CORS'));  // Deny the request
-    }
-  },
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',  // Allowed HTTP methods
-  credentials: true  // Allow cookies to be sent with cross-origin requests
+  origin: allowedOrigin,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  allowedHeaders: 'Content-Type, Authorization',
+  credentials: true
 }));
 
 // app.use(cors({
