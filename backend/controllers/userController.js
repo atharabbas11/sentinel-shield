@@ -87,7 +87,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
             _id: user._id,
             name: user.name,
             email: user.email,
-            // profileImage: user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage}` : null,
             profileImage: profileImageUrl,
         });
     } else {
