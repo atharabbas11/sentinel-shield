@@ -96,7 +96,7 @@ const AboutUsPage = () => {
                     <h2 className="xl:text-right lg:text-right md:text-left text-4xl font-semibold mb-6 text-gray-300">About Us</h2>
                     <p className="xl:text-right lg:text-right md:text-left inline-flex justify-end mt-4 text-lg text-gray-300">We are passionate about the art and science of steganography. Our mission is to provide powerful tools that help you communicate securely and privately.</p>
                     <div className="lg:mx-auto lg:flex lg:justify-end mt-6">
-                      <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="#">Learn More</a>
+                      <button className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="#">Learn More</button>
                     </div>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ const AboutUsPage = () => {
 
               <div className="mt-12 sm:mt-16 lg:mt-0">
                 <div className="flex justify-center mx-auto">
-                  <img width="647" height="486" style={{ color: "transparent" }} src={aboutus}/>
+                  <img width="647" height="486" style={{ color: "transparent" }} alt='aboutusimg' src={aboutus}/>
                 </div>
               </div>
             </div>

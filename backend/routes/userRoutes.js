@@ -44,6 +44,7 @@ router.post('/forgot-password', async (req, res) => {
     user.resetPasswordExpires = Date.now() + 15 * 60 * 1000; // 15 minutes
     await user.save();
 
+    // basic code for testing
     // const mailOptions = {
     //   to: user.email,
     //   from: 'testingmyproject101@gmail.com',
@@ -51,31 +52,7 @@ router.post('/forgot-password', async (req, res) => {
     //   text: `Your OTP for password reset is ${otp}. It is valid for 15 minutes.`,
     // };
 
-
-    // with logo
-    // const mailOptions = {
-    //   to: user.email,
-    //   from: 'testingmyproject101@gmail.com',
-    //   subject: 'Password Reset OTP',
-    //   html: `
-    //     <html>
-    //     <body style="font-family: Arial, sans-serif; color: #333;">
-    //       <div style="max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-    //         <div style="text-align: center;">
-    //           <img src="https://www.freepik.com/premium-vector/crestfallen-cavalier-vector-black-icon-design-sad-knight-soldier-logo-sombre-sentinel-elegant-b_245145619.htm#query=sentinel%20logo&position=8&from_view=keyword&track=ais_hybrid&uuid=fa0cca5b-3f0f-440a-8c92-3c2d5c41a817" alt="Company Logo" style="width: 100px; height: auto;"/>
-    //         </div>
-    //         <h2 style="text-align: center; color: #4CAF50;">Password Reset Request</h2>
-    //         <p>Hello,</p>
-    //         <p>Your OTP for password reset is <strong>${otp}</strong>. It is valid for 15 minutes.</p>
-    //         <p>If you did not request this, please ignore this email.</p>
-    //         <p>Best regards,<br/>The Your Company Team</p>
-    //       </div>
-    //     </body>
-    //     </html>
-    //   `,
-    // };
-
-    // with logo in text
+    // with logo in text and added html format
     const mailOptions = {
       to: user.email,
       from: 'testingmyproject101@gmail.com',
@@ -232,6 +209,8 @@ router.put('/update-name', protect, async (req, res) => {
 
 // Send OTP email
 const sendOtpEmail = async (to, otp) => {
+
+  // basic code for testing
   // const mailOptions = {
   //   to,
   //   from: 'testingmyproject101@gmail.com',
@@ -239,6 +218,8 @@ const sendOtpEmail = async (to, otp) => {
   //   text: `Your OTP for changing email is ${otp}. It is valid for 15 minutes.`,
   // };
 
+ 
+  // with logo in text and added html format
   const mailOptions = {
     to,
     from: 'testingmyproject101@gmail.com',
@@ -275,6 +256,7 @@ const sendOtpEmail = async (to, otp) => {
     throw new Error('Failed to send OTP');
   }
 };
+
 
 // Request email change
 router.post('/request-email-change', protect, async (req, res) => {
@@ -313,6 +295,7 @@ router.post('/request-email-change', protect, async (req, res) => {
   }
 });
 
+
 // Verify OTP and update email
 router.post('/verify-email-change', protect, async (req, res) => {
   const { otp } = req.body;
@@ -349,33 +332,6 @@ router.post('/verify-email-change', protect, async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
-
-
-/* login and signout */
-
-// Login route
-// router.post('/login', async (req, res) => {
-//   const { email, password } = req.body;
-
-//   try {
-//     // Authenticate user
-//     const user = await User.findOne({ email });
-//     if (!user || !(await user.comparePassword(password))) {
-//       return res.status(401).json({ message: 'Invalid email or password' });
-//     }
-
-//     // Generate token
-//     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-//       expiresIn: '1h',
-//     });
-
-//     // Respond with token and message
-//     res.status(200).json({ token, message: 'Login successful' });
-//   } catch (error) {
-//     console.error('Error during login:', error);
-//     res.status(500).json({ message: 'Server error' });
-//   }
-// });
 
 
 // Sign-out route

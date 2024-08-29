@@ -4,20 +4,6 @@ const express = require('express');
 const router = express.Router();
 const Contact = require('../models/contactModel');
 
-// POST endpoint to handle form submissions
-// router.post('/', async (req, res) => {
-//   try {
-//     const { name, email, message } = req.body;
-//     const newContact = new Contact({ name, email, message });
-//     await newContact.save();
-//     res.status(201).json({ message: 'Message received' });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: 'Internal server error' });
-//   }
-// });
-
-
 // Function to validate email address
 const validateEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

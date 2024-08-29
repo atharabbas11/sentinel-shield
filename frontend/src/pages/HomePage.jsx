@@ -194,7 +194,7 @@ const HomePage = ({ isLoggedIn }) => {
 
               <div className="mt-12 sm:mt-16 lg:mt-0">
                 <div className="flex justify-center mx-auto">
-                  <img width="647" height="486" style={{ color: "transparent" }} src={aboutus} />
+                  <img width="647" height="486" style={{ color: "transparent" }} src={aboutus} alt='aboutus' />
                 </div>
               </div>
             </div>
@@ -234,6 +234,7 @@ const HomePage = ({ isLoggedIn }) => {
                     width="647" height="486"
                     style={{ color: "transparent" }}
                     src={contactus}
+                    alt='contactus'
                   />
                 </div>
               </div>
@@ -487,46 +488,3 @@ const HomePage = ({ isLoggedIn }) => {
 
 
 export default HomePage;
-
-
-
-
-
-// previous version
-
-{/* About Section */ }
-{/* <section id="about" className="mb-10" ref={aboutRef}>
-          <div className="container mx-auto flex flex-col md:flex-row items-center">
-            <div className="md:w-3/5 mb-8 md:mb-0 md:pl-8 md:pr-28 lg:pl-14 xl:pl-44">
-              <img src={aboutus} alt="About Us" />
-            </div>
-            <div className={`w-full md:w-2/5 text-center md:text-left p-2 ${isVisible.about ? 'slide-in-right' : ''}`}>
-              <h2 className="text-4xl font-semibold mb-6 text-gray-300">About Us</h2>
-              <p className="text-lg mb-4 xl:pr-20 text-white">
-                We are passionate about the art and science of steganography. Our mission is to provide powerful tools that help you communicate securely and privately.
-              </p>
-              <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition" onClick={() => { navigate('/aboutus'); window.scrollTo(0, 0); }}>
-                Learn More
-              </button>
-            </div>
-          </div>
-        </section> */}
-
-{/* Contact Section */ }
-{/* <section id="contact" ref={contactRef}>
-          <div className="container mx-auto flex flex-col md:flex-row items-center">
-            <div className={`w-full md:w-2/5 text-center md:text-right p-2 ${isVisible.contact ? 'slide-in-left' : ''}`}>
-              <h2 className="text-4xl font-semibold mb-6 text-gray-300">Contact Us</h2>
-              <p className="text-lg mb-4 xl:pl-20 text-white">
-                Have questions or feedback? We'd love to hear from you. Reach out to us at{' '}
-                <a href="mailto:testingmyproject101@gmail.com" className="text-blue-600 hover:underline break-words">testingmyproject101@gmail.com</a>.
-              </p>
-              <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition" onClick={() => { navigate('/contactus'); window.scrollTo(0, 0); }}>
-                Learn More
-              </button>
-            </div>
-            <div className="md:w-3/5 mb-8 md:mb-0 md:pl-8 md:pr-8 lg:pr-20 lg:pl-44">
-              <img src={contactus} alt="Contact Us" />
-            </div>
-          </div>
-        </section> */}

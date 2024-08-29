@@ -5,7 +5,15 @@ const asyncHandler = require('express-async-handler');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'jwt_secret_token_for_project'; // jwt secret token
+const JWT_SECRET = process.env.JWT_SECRET; // jwt secret token
+const JWT_EXPIRATION = process.env.JWT_EXPIRATION || '30d'; // Configurable expiration time ( Adjust as needed eample: 1d 7d 14d...)
+
+
+// Generating Token
+const generateToken = (id) => {
+    return jwt.sign({ id }, JWT_SECRET, { expiresIn: JWT_EXPIRATION });
+};
+
 
 // Register a new user
 const registerUser = asyncHandler(async (req, res) => {
@@ -40,6 +48,13 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 
+// Get user ID
+const getUserId = asyncHandler(async (req, res) => {
+    const userId = req.user._id;  // Assuming `req.user` is set by the `protect` middleware
+    res.json({ userId });
+});
+
+
 // Authenticate a user
 const authUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
@@ -65,32 +80,21 @@ const getUserProfile = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
 
     if (user) {
+         // Construct the profile image URL with forward slashes to get correcr url from DB
+         const profileImageUrl = user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
+
         res.json({
             _id: user._id,
             name: user.name,
             email: user.email,
-            profileImage: user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage}` : null,
-            // profileImage: user.profileImage
+            // profileImage: user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage}` : null,
+            profileImage: profileImageUrl,
         });
     } else {
         res.status(404).json({ message: 'User not found' }); // Include a failure message
     }
 });
 
-
-// Get user ID
-const getUserId = asyncHandler(async (req, res) => {
-    const userId = req.user._id;  // Assuming `req.user` is set by the `protect` middleware
-    res.json({ userId });
-});
-
-
-// Generating Token
-const generateToken = (id) => {
-    return jwt.sign({ id }, JWT_SECRET, {
-        expiresIn: '30d' // Adjust as needed eample: 1d 7d 14d...
-    });
-};
 
 module.exports = { registerUser, authUser, getUserProfile, getUserId, generateToken };
 

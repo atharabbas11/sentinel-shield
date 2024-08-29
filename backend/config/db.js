@@ -1,11 +1,10 @@
 // config/db.js
-
 // mongodb compass localhost
 // const mongoose = require('mongoose');
 
 // const connectDB = async () => {
 //     try {
-//         const uri = 'mongodb://localhost:27017/sentinel'; // Example URI, adjust as per your setup
+//         const uri = 'mongodb://localhost:27017/sentinel';
 //         const conn = await mongoose.connect(uri, {
 //             useNewUrlParser: true,
 //             useUnifiedTopology: true,
@@ -28,13 +27,18 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        const uri = 'mongodb+srv://atharabbas11786:1234@steganography.2rv6k.mongodb.net/?retryWrites=true&w=majority&appName=steganography';
-        const conn = await mongoose.connect(uri, {
-            // Deprecated options removed
-        });
+        const uri = process.env.MONGO_URI;
 
+        // Debugging line to verify uri value
+        console.log('MongoDB URI:', uri);
+        
+        const conn = await mongoose.connect(uri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
         console.log(`MongoDB Connected: ${conn.connection.host}`);
-    } catch (error) {
+    }
+    catch (error) {
         console.error(`Error: ${error.message}`);
         process.exit(1);
     }

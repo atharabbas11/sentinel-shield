@@ -5,12 +5,12 @@ import backgroundImage from '../images/bg-1.png'; // Adjust the path according t
 import encr from '../images/encr.png';
 import decr from '../images/decr.png';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const SteganographyPage = () => {
   const [user, setUser] = useState(null); // Initialize as null
   const [profileImage, setProfileImage] = useState(''); // Store the user's profile image URL
   const navigate = useNavigate();
-
-  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -86,6 +86,8 @@ const SteganographyPage = () => {
     </div>
   );
 };
+
+
 
 export default SteganographyPage;
 

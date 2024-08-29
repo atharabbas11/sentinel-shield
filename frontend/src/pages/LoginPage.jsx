@@ -127,6 +127,44 @@ const LoginPage = ({ setIsLoggedIn }) => {
     }
   };
 
+  const handleLoginError = (error) => {
+    let errorMessage = 'Login failed: Unknown error';
+
+    if (error.response) {
+        // Check for specific status codes or messages
+        const status = error.response.status;
+        const message = error.response.data?.message;
+        
+        switch (status) {
+            case 400:
+                errorMessage = `Bad Request: ${message || 'The request could not be understood or was missing required parameters.'}`;
+                break;
+            case 401:
+                errorMessage = `Unauthorized: ${message || 'Invalid credentials.'}`;
+                break;
+            case 403:
+                errorMessage = `Forbidden: ${message || 'You do not have permission to access this resource.'}`;
+                break;
+            case 404:
+                errorMessage = `Not Found: ${message || 'The requested resource could not be found.'}`;
+                break;
+            case 500:
+                errorMessage = `Server Error: ${message || 'An error occurred on the server.'}`;
+                break;
+            default:
+                errorMessage = `Error ${status}: ${message || 'An unexpected error occurred.'}`;
+                break;
+        }
+    } else if (error.request) {
+        // The request was made but no response was received
+        errorMessage = 'No response received from server.';
+    } else {
+        // Something happened in setting up the request
+        errorMessage = `Request Error: ${error.message}`;
+    }
+    setError(errorMessage);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); // Start showing the loading animation
@@ -157,7 +195,8 @@ const LoginPage = ({ setIsLoggedIn }) => {
       }, 100); // Delay duration in milliseconds
 
     } catch (error) {
-      setError('Login failed: ' + (error.response?.data?.message || 'Unknown error'));
+        handleLoginError(error);
+      // setError('Login failed: ' + (error.response?.data?.message || 'Unknown error'));
       setMessage('');
       setLoading(false);
     }

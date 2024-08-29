@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes, FaUser, FaSignOutAlt } from 'react-icons/fa';
+// import { FaBars, FaTimes, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
 import profilePlaceholder from '../images/default-profile.jpg'; // Add a placeholder image if user doesn't have one
 import LoadingBar from './LoadingBar';
 
@@ -208,6 +209,7 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
                         ) : (
                           <div className="w-7 h7 mr-2 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
                             <img src={profilePlaceholder} alt="Placeholder" />
+                            {error}
                           </div>
                         )}
                         <span>Profile</span>
@@ -281,6 +283,7 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
                   <div className="w-7 h7 mr-2 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
                      <div className="loading-spinner"></div>
                     <img src={profilePlaceholder} alt="Placeholder"/>
+                    {error}
                   </div>
                 )}
                 <span>Profile</span>
