@@ -43,7 +43,7 @@ const SignupPage = () => {
 
   return (
     <div>
-      <LoadingBar loading={loading} /> {/* Show the loading bar when loading */}
+      <LoadingBar loading={loading} />
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="bg-white p-8 rounded shadow-md w-custom-340">
           <h2 className="text-3xl mb-6 font-bold text-center">Sign Up</h2>
@@ -51,7 +51,6 @@ const SignupPage = () => {
           {error && <div className="text-red-500 mb-4 text-center font-semibold">{error}</div>}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              {/* <label className="block mb-1 font-semibold" htmlFor="name">Name</label> */}
               <input
                 type="text"
                 id="name"
@@ -63,7 +62,6 @@ const SignupPage = () => {
               />
             </div>
             <div className="mb-4">
-              {/* <label className="block mb-1 font-semibold" htmlFor="email">Email</label> */}
               <input
                 type="email"
                 id="email"
@@ -75,7 +73,6 @@ const SignupPage = () => {
               />
             </div>
             <div className="mb-6">
-              {/* <label className="block mb-1 font-semibold" htmlFor="password">Password</label> */}
               <input
                 type="password"
                 id="password"
