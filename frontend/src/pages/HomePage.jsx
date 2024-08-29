@@ -38,12 +38,7 @@ const HomePage = ({ isLoggedIn }) => {
         setLoading(false);
     }, 300); // Adjust the delay to match the desired loading duration
 };
-
-  // const handleNavigation = (path) => {
-  //   navigate(path);
-  //   window.scrollTo(0, 0);
-  // };
-
+  
   // Intersection Observer setup 
   const [isVisible, setIsVisible] = useState({
     features: false,
@@ -186,7 +181,6 @@ const HomePage = ({ isLoggedIn }) => {
                     <button onClick={() => handleClickLoading('/aboutus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
                       Get Started
                     </button>
-                      {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/aboutus" onClick={handleClickLoding}>Learn More</a> */}
                     </div>
                   </div>
                 </div>
@@ -222,7 +216,6 @@ const HomePage = ({ isLoggedIn }) => {
                       <button onClick={() => handleClickLoading('/contactus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
                         Get Started
                       </button>
-                      {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/contactus" onClick={handleClickLoading}>Learn More</a> */}
                     </div>
                   </div>
                 </div>
@@ -240,7 +233,6 @@ const HomePage = ({ isLoggedIn }) => {
               </div>
             </div>
           </div>
-          {/* </div> */}
         </section>
 
 
