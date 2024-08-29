@@ -61,16 +61,16 @@ app.use('/api/users', userRoutes);
 app.use('/api/contact', contactRoutes);
 
 // Serve static files from the uploads directory
-// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Middleware to set CORS headers
-app.use('/uploads', (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', allowedOrigin); // Allow from your frontend URL
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.header('Cross-Origin-Resource-Policy', 'cross-origin'); // Allows cross-origin requests
-    next();
-}, express.static(path.join(__dirname, 'uploads')));
+// app.use('/uploads', (req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', allowedOrigin); // Allow from your frontend URL
+//     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+//     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//     res.header('Cross-Origin-Resource-Policy', 'cross-origin'); // Allows cross-origin requests
+//     next();
+// }, express.static(path.join(__dirname, 'uploads')));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
