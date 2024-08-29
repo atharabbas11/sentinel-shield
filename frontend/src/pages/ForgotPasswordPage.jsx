@@ -37,12 +37,7 @@ const ForgotPasswordPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md w-80">
-        {/* <h2 className="text-2xl mb-6">Forgot Password</h2> */}
         <h2 className="text-3xl mb-3 font-bold text-center">Forgot Password</h2>
-        {/* <div className="mt-4 mb-6 text-sm text-gray-500 font-semibold text-center">
-          Remember your password?
-          <a href="/login" className="text-l text-blue-400"> login here</a>
-        </div> */}
         {!loggedIn && (
           <div className="mt-4 mb-6 text-sm text-gray-500 font-semibold text-center">
             Remember your password?
