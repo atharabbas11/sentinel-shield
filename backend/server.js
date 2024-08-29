@@ -26,7 +26,7 @@ connectDB();
 app.use(helmet());
 app.use(cors({
     origin: (origin, callback) => {
-        const allowedOrigins = ['http://localhost:3000', 'https://sentinel-shield-frontend.onrender.com/'];
+        const allowedOrigins = ['http://localhost:3000', 'https://sentinel-shield.onrender.com/'];
         if (allowedOrigins.includes(origin) || !origin) {
             callback(null, true);
         } else {
