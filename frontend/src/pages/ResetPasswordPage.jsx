@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 // import { BarLoader } from 'react-spinners';
-import LoadingBar from '../components/LoadingBar'; // Ensure the path is correct based on your project structure
+import LoadingBar from '../components/LoadingBar';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -44,11 +44,6 @@ const ResetPasswordPage = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      {/* {loading && (
-        <div className="fixed top-0 left-0 w-full z-50">
-          <BarLoader color="#1a202c" width="100%" />
-        </div>
-      )} */}
       <LoadingBar loading={loading} />
       <div className="bg-white p-8 rounded shadow-md w-80">
         <h2 className="text-2xl mb-6">Reset Password</h2>
