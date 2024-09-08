@@ -76,27 +76,84 @@ const authUser = asyncHandler(async (req, res) => {
 
 
 // Get user profile
+// const getUserProfile = asyncHandler(async (req, res) => {
+//     const user = await User.findById(req.user._id);
+
+//     if (user) {
+//          // Construct the profile image URL with forward slashes to get correcr url from DB
+//          const profileImageUrl = user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
+
+//         res.json({
+//             _id: user._id,
+//             name: user.name,
+//             email: user.email,
+//             // profileImage: user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage}` : null,
+//             profileImage: profileImageUrl,
+//         });
+//     } else {
+//         res.status(404).json({ message: 'User not found' }); // Include a failure message
+//     }
+// });
+
 const getUserProfile = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.user._id);
+    try {
+        const user = await User.findById(req.user._id);
 
-    if (user) {
-         // Construct the profile image URL with forward slashes to get correcr url from DB
-         const profileImageUrl = user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
+        if (user) {
+            // Construct the profile image URL with forward slashes
+            const profileImageUrl = user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
 
-        res.json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            // profileImage: user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage}` : null,
-            profileImage: profileImageUrl,
-        });
-    } else {
-        res.status(404).json({ message: 'User not found' }); // Include a failure message
+            // Output the raw background image path from the database
+            const backgroundImagePath = user.backgroundImage || null;
+
+            res.json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                profileImage: profileImageUrl,
+                backgroundImage: backgroundImagePath, // Output raw background image path
+            });
+        } else {
+            res.status(404).json({ message: 'User not found' }); // Include a failure message
+        }
+    } catch (error) {
+        console.error('Error fetching user profile:', error);
+        res.status(500).json({ message: 'Server error' }); // Handle potential server errors
     }
 });
 
 
-module.exports = { registerUser, authUser, getUserProfile, getUserId, generateToken };
+
+const updateBackgroundImage = async (req, res) => {
+  try {
+    const userId = req.user.id; // Assuming user ID is obtained from authentication middleware
+    const { backgroundImageUrl } = req.body;
+
+    if (!backgroundImageUrl) {
+      return res.status(400).json({ message: 'Background image URL is required' });
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    user.backgroundImage = backgroundImageUrl; // Save the background image URL
+    await user.save();
+
+    res.status(200).json({ message: 'Background image updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+module.exports = {
+  updateBackgroundImage,
+};
+
+
+module.exports = { registerUser, authUser, getUserProfile, getUserId, generateToken, updateBackgroundImage };
 
 
 

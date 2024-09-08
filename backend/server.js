@@ -26,7 +26,7 @@ connectDB();
 app.use(helmet());
 app.use(cors({
     origin: (origin, callback) => {
-        const allowedOrigins = ['http://localhost:3000', 'https://sentinel-shield-frontend.onrender.com/'];
+        const allowedOrigins = ['http://localhost:3000', 'http://192.168.0.147:3000', 'https://sentinel-shield-frontend.onrender.com/'];
         if (allowedOrigins.includes(origin) || !origin) {
             callback(null, true);
         } else {
@@ -52,7 +52,14 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Logging
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
+// Enable detailed logging only in development
+if (process.env.NODE_ENV === 'development') {
+    app.use(morgan('combined'));
+  } else {
+    // Disable logging or use a minimal format in production
+    app.use(morgan('tiny'));
+  }
 
 // Body parser middleware
 app.use(express.json());
@@ -72,7 +79,6 @@ app.use('/uploads', (req, res, next) => {
     next();
   }, express.static(path.join(__dirname, 'uploads')));
 
-// Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ message: 'An internal server error occurred.' });

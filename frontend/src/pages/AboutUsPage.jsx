@@ -1,6 +1,6 @@
 // src/pages/AboutUsPage.js
 import React, { useState, useRef, useEffect } from 'react';
-import backgroundImage from '../images/bg-1.png'; // Adjust the path according to your project structure
+import backgroundImage1 from '../images/doted6.png'
 import aboutus from '../images/aboutus.png'; // Adjust the path
 // import LoadingBar from './LoadingBar'; // Ensure the path is correct based on your project structure
 import { RiTeamLine } from "react-icons/ri";
@@ -52,7 +52,7 @@ const AboutUsPage = () => {
   return (
     <div className="min-h-screen relative bg-custom-bg">
       {/* Initial image */}
-      <div
+      {/* <div
         className="fixed inset-0 z-0"
         style={{
           backgroundImage: `url(${backgroundImage})`,
@@ -60,10 +60,11 @@ const AboutUsPage = () => {
           backgroundPosition: 'center',
           height: '100vh', // Ensure it covers the full viewport height
         }}
-      ></div>
+      ></div> */}
 
       {/* <LoadingBar loading={loading} /> */}
-      <main className="relative z-10 container mx-auto mt-8 p-4">
+      <section style={{ backgroundImage: `url(${backgroundImage1})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', height: '100vh' }}>
+        <main className="relative z-10 container mx-auto mt-8 p-4">
         {/* <section id="about" className="my-12 mt-20" ref={aboutRef}>
           <h1 className="text-5xl font-semibold text-center mb-8 text-white">About</h1>
           <div className="container mx-auto flex flex-col md:flex-row items-center">
@@ -92,8 +93,8 @@ const AboutUsPage = () => {
                       <RiTeamLine size={32} color='white' />
                     </span>
                   </div>
-                  <div classNmae="mt-6">
-                    <h2 className="xl:text-right lg:text-right md:text-left text-4xl font-semibold mb-6 text-gray-300">About Us</h2>
+                  <div className="mt-6">
+                    <h2 className="xl:text-right lg:text-right md:text-left text-4xl font-semibold mb-6 text-white">About Us</h2>
                     <p className="xl:text-right lg:text-right md:text-left inline-flex justify-end mt-4 text-lg text-gray-300">We are passionate about the art and science of steganography. Our mission is to provide powerful tools that help you communicate securely and privately.</p>
                     <div className="lg:mx-auto lg:flex lg:justify-end mt-6">
                       <button className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="#">Learn More</button>
@@ -110,7 +111,8 @@ const AboutUsPage = () => {
             </div>
           </div>
         </section>
-      </main>
+        </main>
+      </section>
     </div>
   );
 };

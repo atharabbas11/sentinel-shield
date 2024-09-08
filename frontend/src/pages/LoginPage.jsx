@@ -99,6 +99,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from '../components/LoadingBar'; // Ensure the path is correct based on your project structure
+import backgroundImage from '../images/bglogin5.png';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -131,36 +132,36 @@ const LoginPage = ({ setIsLoggedIn }) => {
     let errorMessage = 'Login failed: Unknown error';
 
     if (error.response) {
-        // Check for specific status codes or messages
-        const status = error.response.status;
-        const message = error.response.data?.message;
-        
-        switch (status) {
-            case 400:
-                errorMessage = `Bad Request: ${message || 'The request could not be understood or was missing required parameters.'}`;
-                break;
-            case 401:
-                errorMessage = `Unauthorized: ${message || 'Invalid credentials.'}`;
-                break;
-            case 403:
-                errorMessage = `Forbidden: ${message || 'You do not have permission to access this resource.'}`;
-                break;
-            case 404:
-                errorMessage = `Not Found: ${message || 'The requested resource could not be found.'}`;
-                break;
-            case 500:
-                errorMessage = `Server Error: ${message || 'An error occurred on the server.'}`;
-                break;
-            default:
-                errorMessage = `Error ${status}: ${message || 'An unexpected error occurred.'}`;
-                break;
-        }
+      // Check for specific status codes or messages
+      const status = error.response.status;
+      const message = error.response.data?.message;
+
+      switch (status) {
+        case 400:
+          errorMessage = `Bad Request: ${message || 'The request could not be understood or was missing required parameters.'}`;
+          break;
+        case 401:
+          errorMessage = `Unauthorized: ${message || 'Invalid credentials.'}`;
+          break;
+        case 403:
+          errorMessage = `Forbidden: ${message || 'You do not have permission to access this resource.'}`;
+          break;
+        case 404:
+          errorMessage = `Not Found: ${message || 'The requested resource could not be found.'}`;
+          break;
+        case 500:
+          errorMessage = `Server Error: ${message || 'An error occurred on the server.'}`;
+          break;
+        default:
+          errorMessage = `Error ${status}: ${message || 'An unexpected error occurred.'}`;
+          break;
+      }
     } else if (error.request) {
-        // The request was made but no response was received
-        errorMessage = 'No response received from server.';
+      // The request was made but no response was received
+      errorMessage = 'No response received from server.';
     } else {
-        // Something happened in setting up the request
-        errorMessage = `Request Error: ${error.message}`;
+      // Something happened in setting up the request
+      errorMessage = `Request Error: ${error.message}`;
     }
     setError(errorMessage);
   };
@@ -195,7 +196,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
       }, 100); // Delay duration in milliseconds
 
     } catch (error) {
-        handleLoginError(error);
+      handleLoginError(error);
       // setError('Login failed: ' + (error.response?.data?.message || 'Unknown error'));
       setMessage('');
       setLoading(false);
@@ -203,48 +204,76 @@ const LoginPage = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div>
+    <div className="relative bg-custom-bg">
       <LoadingBar loading={loading} />
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="bg-white p-8 rounded shadow-md w-custom-340">
-          <h2 className="text-3xl mb-6 font-bold text-center">Login</h2>
-          {message && <div className="text-green-500 mb-4">{message}</div>}
-          {error && <div className="text-red-500 mb-4">{error}</div>}
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <input
-                type="email"
-                className="w-full px-3 py-2 border rounded"
-                value={email}
-                placeholder='Email'
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="password"
-                className="w-full px-3 py-2 border rounded"
-                value={password}
-                placeholder='Password'
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+      {/* <div className='relative inset-0 z-0'>
+          <img 
+            style={{ 
+              backgroundImage: `url(${backgroundImage})`, 
+              backgroundSize: 'cover', 
+              backgroundPosition: 'bottom', 
+              backgroundRepeat: 'repeat' 
+            }}
+          />
+      </div> */}
+      <section>
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundPosition: 'bottom',
+            backgroundRepeat: 'repeat',
+            opacity: '50%',
+            height: '100vh',
+            width: '100%',
+            backgroundSize: 'cover'
+          }}
+        ></div>
+        <div className="relative z-10 min-h-screen flex items-center justify-center">
+          <div className="bg-white p-8 rounded shadow-md w-custom-340">
+            <h2 className="text-3xl mb-6 font-bold text-center">Login</h2>
+            {message && <div className="text-green-500 mb-4">{message}</div>}
+            {error && <div className="text-red-500 mb-4">{error}</div>}
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <input
+                  type="email"
+                  className="w-full px-3 py-2 border rounded"
+                  value={email}
+                  placeholder='Email'
+                  autoComplete="username"
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="mb-4">
+                <input
+                  type="password"
+                  className="w-full px-3 py-2 border rounded"
+                  value={password}
+                  placeholder='Password'
+                  autocomplete="current-password"
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
 
-            <div className="mb-4 text-sm font-semibold text-right">
-              <a href="/forgot-password" className="text-blue-400">
-                Forgotten your password?
-              </a>
+              <div className="mb-4 text-sm font-semibold text-right">
+                <a href="/forgot-password" className="text-blue-400">
+                  Forgotten your password?
+                </a>
+              </div>
+              <button type="submit" className="w-full h-11 bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+                Login
+              </button>
+            </form>
+            <div className="mt-4 text-sm text-gray-500 font-semibold text-right">
+              Don't have an account?
+              <a href="/signup" className="text-l text-blue-400"> sign up</a>
             </div>
-            <button type="submit" className="w-full h-11 bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
-              Login
-            </button>
-          </form>
-          <div className="mt-4 text-sm text-gray-500 font-semibold text-right">
-            Don't have an account?
-            <a href="/signup" className="text-l text-blue-400"> sign up</a>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

@@ -10,6 +10,11 @@ const userSchema = mongoose.Schema(
             default: '' 
         }, // To store image path
 
+        backgroundImage: {
+            type: String,
+            default: ''
+        }, // To store background image path
+
         name: {
             type: String,
             required: true,

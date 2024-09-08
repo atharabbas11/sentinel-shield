@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
-import AccountInfoPage from './pages/AccountInfoPage'; // Correct import name
-import SteganographyPage from './pages/SteganographyPage';
-import EncryptionImagePage from './pages/EncryptionImagePage';
-import DecryptionImagePage from './pages/DecryptionImagePage';
-import ForgotPasswordPage from './pages/ForgotPasswordPage';
-import ResetPasswordPage from './pages/ResetPasswordPage';
-import FeaturesPage from './pages/FeaturesPage';
-import AboutUsPage from './pages/AboutUsPage';
-import ContactUsPage from './pages/ContactUsPage';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar.jsx';
+import HomePage from './pages/HomePage.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import SignupPage from './pages/SignupPage.jsx';
+import AccountInfoPage from './pages/AccountInfoPage.jsx';
+import SteganographyPage from './pages/SteganographyPage.jsx';
+import EncryptionImagePage from './pages/EncryptionImagePage.jsx';
+import DecryptionImagePage from './pages/DecryptionImagePage.jsx';
+import ForgotPasswordPage from './pages/ForgotPasswordPage.jsx';
+import ResetPasswordPage from './pages/ResetPasswordPage.jsx';
+import FeaturesPage from './pages/FeaturesPage.jsx';
+import AboutUsPage from './pages/AboutUsPage.jsx';
+import ContactUsPage from './pages/ContactUsPage.jsx';
+import Footer from './components/Footer.jsx';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

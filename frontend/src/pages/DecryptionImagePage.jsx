@@ -460,7 +460,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import CryptoJS from 'crypto-js';
 import { FaCopy } from 'react-icons/fa';
-import backgroundImage from '../images/bg-1.png'; // Adjust the path according to your project structure
+import backgroundImage from '../images/doted6.png'; // Adjust the path according to your project structure
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -560,7 +560,7 @@ const DecryptionImagePage = () => {
                 if (decryptedText) {
                     setDecryptedData(decryptedText);
                 } else {
-                    setDecryptionError('Failed to decrypt data. Please check the image and try again.');
+                    setDecryptionError('🚨 Oops! Failed to decrypt data. Please check the image and try again.');
                 }
                 setLoading(false);
             };
@@ -569,11 +569,34 @@ const DecryptionImagePage = () => {
         reader.readAsDataURL(image);
     };
 
+    // const handleCopyText = () => {
+    //     navigator.clipboard.writeText(decryptedData)
+    //         .then(() => setCopySuccess('Text copied!'))
+    //         .catch(() => setCopySuccess('Failed to copy text.'));
+    // };
+
     const handleCopyText = () => {
-        navigator.clipboard.writeText(decryptedData)
-            .then(() => setCopySuccess('Text copied!'))
-            .catch(() => setCopySuccess('Failed to copy text.'));
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            // Use the Clipboard API if available
+            navigator.clipboard.writeText(decryptedData)
+                .then(() => setCopySuccess('Text copied!'))
+                .catch(() => setCopySuccess('Failed to copy text.'));
+        } else {
+            // Fallback method
+            const textArea = document.createElement('textarea');
+            textArea.value = decryptedData;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                setCopySuccess('Text copied!');
+            } catch (err) {
+                setCopySuccess('Failed to copy text.');
+            }
+            document.body.removeChild(textArea);
+        }
     };
+    
 
     const maskUserId = (userId) => {
         const length = userId.length;
@@ -584,7 +607,7 @@ const DecryptionImagePage = () => {
 
     return (
         <div className="min-h-screen bg-custom-bg">
-            <div
+            {/* <div
                 className="fixed inset-0 z-0"
                 style={{
                     backgroundImage: `url(${backgroundImage})`,
@@ -592,8 +615,9 @@ const DecryptionImagePage = () => {
                     backgroundPosition: 'center',
                     height: '100vh',
                 }}
-            ></div>
-            <main className="relative z-10 container mx-auto mt-8 p-4">
+            ></div> */}
+            <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', minHeight: '100vh' }}>
+                <main className="relative z-10 container mx-auto mt-8 p-4">
                 <div className="container mx-auto pt-32 p-4">
                     <h1 className="text-5xl font-bold mb-8 text-white text-center">Decrypt Data from Image</h1>
                     <div id="decryptionSection" className="mb-8">
@@ -609,6 +633,7 @@ const DecryptionImagePage = () => {
                                     onChange={(e) => setImage(e.target.files[0])}
                                     required
                                     className="w-full p-2 border border-gray-300 rounded"
+                                    style={{color:'white'}}
                                 />
                             </div>
                             <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
@@ -616,7 +641,7 @@ const DecryptionImagePage = () => {
                             </button>
                         </form>
                         {loading && (
-                            <div className="loading-container">
+                            <div className="loading-container mt-10">
                                 <div className="loading-spinner mb-12"></div>
                                 <p className="mt-2 text-white">Decrypting...</p>
                             </div>
@@ -635,7 +660,9 @@ const DecryptionImagePage = () => {
                                     </div>
                                 )}
                                 {decryptionError && !decryptedData && (
-                                    <p className="font-medium text-red-500">Error: {decryptionError}</p>
+                                    <div className="mb-4 p-3 bg-red-500 text-white rounded font-semibold">
+                                        <p>Error: {decryptionError}</p>
+                                    </div>
                                 )}
                                 {copySuccess && (
                                     <p className="font-medium text-blue-500">{copySuccess}</p>
@@ -654,7 +681,8 @@ const DecryptionImagePage = () => {
                         />
                     </div>
                 </div>
-            </main>
+                </main>
+            </section>
         </div>
     );
 };

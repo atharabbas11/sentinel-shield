@@ -446,7 +446,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import CryptoJS from 'crypto-js';
-import backgroundImage from '../images/bg-1.png'; // Adjust the path according to your project structure
+import backgroundImage from '../images/doted6.png'; // Adjust the path according to your project structure
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -575,7 +575,7 @@ const EncryptionImagePage = () => {
 
     return (
         <div className="min-h-screen bg-custom-bg">
-            <div
+            {/* <div
                 className="fixed inset-0 z-0"
                 style={{
                     backgroundImage: `url(${backgroundImage})`,
@@ -583,8 +583,9 @@ const EncryptionImagePage = () => {
                     backgroundPosition: 'center',
                     height: '100vh',
                 }}
-            ></div>
-            <main className="relative z-10 container mx-auto mt-8 p-4">
+            ></div> */}
+            <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', minHeight: '100vh' }}>
+                <main className="relative z-10 container mx-auto mt-8 p-4">
                 <div className="container mx-auto pt-32 p-4">
                     <h1 className="text-5xl font-bold mb-8 text-white text-center">Encrypt and Hide Data in Image</h1>
                     <div id="encryptionSection" className="mb-8">
@@ -593,9 +594,11 @@ const EncryptionImagePage = () => {
                             <div>
                                 <label htmlFor="text" className="block font-medium text-white mb-3">Enter your text:</label>
                                 {wordCount === 175 && (
-                                    <p className="text-sm font-semibold text-red-500 mb-3">
-                                        *Note: You have reached the maximum word count of 175 words.
-                                    </p>
+                                    <div className="mb-4 p-3 bg-red-500 text-white rounded font-semibold">
+                                        {/* <p className="text-sm font-semibold text-white mb-3"> */}
+                                            <p>*Note: 🚨 Oops! You have reached the maximum word count of 175 words.</p>
+                                        {/* </p> */}
+                                    </div>
                                 )}
                                 <textarea
                                     id="text"
@@ -617,8 +620,10 @@ const EncryptionImagePage = () => {
                                     name="image"
                                     accept="image/*"
                                     onChange={(e) => setImage(e.target.files[0])}
+                                    color='white'
                                     required
                                     className="w-full p-2 border border-gray-300 rounded"
+                                    style={{color:'white'}}
                                 />
                             </div>
                             <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
@@ -626,9 +631,9 @@ const EncryptionImagePage = () => {
                             </button>
                         </form>
                         {loading && (
-                            <div className="loading-container">
+                            <div className="loading-container mt-10">
                                 <div className="loading-spinner mb-12"></div>
-                                <p className="mt-2 text-white">Processing...</p>
+                                <p className="mt-2 text-white">Encrypting...</p>
                             </div>
                         )}
                         {encryptedImageUrl && !loading && (
@@ -654,7 +659,8 @@ const EncryptionImagePage = () => {
                         />
                     </div>
                 </div>
-            </main>
+                </main>
+            </section>
         </div>
     );
 };

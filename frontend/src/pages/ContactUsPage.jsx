@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
-import backgroundImage from '../images/bg-1.png'; // Adjust the path according to your project structure
+import backgroundImage1 from '../images/doted6.png'
 import contactus from '../images/contactus.png'; // Adjust the path
 import LoadingBar from '../components/LoadingBar'; // Ensure the path is correct based on your project structure
 import { IoMailOutline } from "react-icons/io5";
@@ -79,12 +79,19 @@ const ContactUsPage = () => {
       console.log(`Response Status: ${response.status}`); // Check status code
       console.log(`Response Data: ${JSON.stringify(response.data)}`); // Check response data
 
+      // if (response.status === 201) {
+      //   setSuccessMessage('Message sent successfully!');
+      //   setFormData({ name: '', email: '', message: '' });
+      // } else {
+      //   setErrorMessage('Failed to send message');
+      // }
       if (response.status === 201) {
-        setSuccessMessage('Message sent successfully!');
+        setSuccessMessage('🎉 Hooray! Your message has been sent successfully. We’ll get back to you soon!');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setErrorMessage('Failed to send message');
+        setErrorMessage('🚨 Oops! Something went wrong while sending your message. Please try again later.');
       }
+      
     } catch (error) {
       console.error('Error:', error); // Log the complete error
       setErrorMessage('An error occurred: ' + (error.response?.data?.message || 'Unknown error'));
@@ -95,7 +102,7 @@ const ContactUsPage = () => {
 
   return (
     <div className="min-h-screen relative bg-custom-bg">
-      <div
+      {/* <div
         className="fixed inset-0 z-0"
         style={{
           backgroundImage: `url(${backgroundImage})`,
@@ -103,8 +110,9 @@ const ContactUsPage = () => {
           backgroundPosition: 'center',
           height: '100vh',
         }}
-      ></div>
-      <main className="relative z-10 container mx-auto mt-8 p-4">
+      ></div> */}
+      <section style={{ backgroundImage: `url(${backgroundImage1})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat' }}>
+        <main className="relative z-10 container mx-auto mt-8 p-4">
         <LoadingBar loading={loading} />
         <section id="contactus" className="my-12 mt-20" ref={featuresRef}>
           {/* Contact Section */}
@@ -119,7 +127,7 @@ const ContactUsPage = () => {
                     </div>
 
                     <div className="mt-6">
-                      <h2 className="text-4xl font-semibold mb-6 text-gray-300">Contact Us</h2>
+                      <h2 className="text-4xl font-semibold mb-6 text-white">Contact Us</h2>
                       <p className="mt-4 text-lg text-gray-300">Have questions or feedback? We'd love to hear from you. Reach out to us at{' '}
                         <a href="mailto:testingmyproject101@gmail.com" className="text-blue-600 hover:underline break-words">testingmyproject101@gmail.com</a>.
                       </p>
@@ -145,7 +153,7 @@ const ContactUsPage = () => {
         </section>
 
         <section className="body-font relative text-gray-400">
-          <div className="container mx-auto px-5 py-24">
+          <div className="container mx-auto py-24">
             <div className="mb-12 flex w-full flex-col text-center">
               <h1 className='font-bold lg:text-7xl text-4xl text-white mb-6'>Got questions? <br /> We'll answer.</h1>
               <p className="mx-auto text-base leading-relaxed lg:w-2/3 text-white">
@@ -153,7 +161,7 @@ const ContactUsPage = () => {
               </p>
             </div>
 
-            <div className="mx-auto md:w-2/3 lg:w-1/2 bg-gray-900 opacity-70 rounded-md">
+            <div className="mx-auto md:w-2/3 lg:w-1/2 bg-gray-900 opacity-90 rounded-md">
               {successMessage && (
                 <div className="mb-4 p-4 bg-green-500 text-white rounded">
                   {successMessage}
@@ -209,7 +217,8 @@ const ContactUsPage = () => {
             </div>
           </div>
         </section>
-      </main>
+        </main>
+      </section>
     </div>
   );
 };

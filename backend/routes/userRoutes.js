@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/userModel');
-const { registerUser, authUser, getUserProfile, getUserId } = require('../controllers/userController');
+const { registerUser, authUser, getUserProfile, getUserId, updateBackgroundImage} = require('../controllers/userController');
 const { protect } = require('../middleware/authMiddleware');
 const nodemailer = require('nodemailer');
 const otpGenerator = require('otp-generator');
@@ -28,8 +28,10 @@ router.get('/userid', protect, getUserId);
 const transporter = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
-    user: 'testingmyproject101@gmail.com',
-    pass: 'avsx wcuv vxln ommq',  // Replace with your app-specific password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+    // user: 'testingmyproject101@gmail.com',
+    // pass: 'avsx wcuv vxln ommq',  // Replace with your app-specific password
   },
 });
 
@@ -55,7 +57,7 @@ router.post('/forgot-password', async (req, res) => {
     // with logo in text and added html format
     const mailOptions = {
       to: user.email,
-      from: 'testingmyproject101@gmail.com',
+      from: process.env.FROM_EMAIL,
       subject: 'Password Reset OTP',
       html: `
         <html>
@@ -180,7 +182,6 @@ router.post('/upload-profile-image', protect, upload.single('image'), async (req
 });
 
 
-// Update user name
 router.put('/update-name', protect, async (req, res) => {
   const { name } = req.body; // Get the new name from the request body
 
@@ -222,7 +223,7 @@ const sendOtpEmail = async (to, otp) => {
   // with logo in text and added html format
   const mailOptions = {
     to,
-    from: 'testingmyproject101@gmail.com',
+    from: process.env.FROM_EMAIL, // Use environment variable for the from email address
     subject: 'Email Change OTP',
     html: `
     <html>
@@ -350,6 +351,7 @@ router.post('/signout', asyncHandler(async (req, res) => {
   }
 }));
 
-
+// Route to update background image
+router.post('/update-background-image', protect, updateBackgroundImage);
 
 module.exports = router;

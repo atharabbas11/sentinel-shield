@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
 import profilePlaceholder from '../images/default-profile.jpg'; // Add a placeholder image if user doesn't have one
 import LoadingBar from './LoadingBar';
+import logo from '../images/logo-wob.png';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -60,7 +61,7 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   };
 
   const toggleAccountMenu = () => {
@@ -105,7 +106,7 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
     fetchUserProfile();
   }, []);
 
-  
+
   const handleNavigation = (path) => {
     navigate(path);
     window.scrollTo(0, 0);
@@ -120,9 +121,17 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
         <div className="mx-auto flex justify-between items-center px-4">
 
           {/* Left Section: Logo */}
+          {/* <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold cursor-pointer" onClick={() => handleNavigation('/')}>
+            Sentinel Shield
+          </h1> */}
+          {/* <img src={logo} alt="" style={{height: '50px', cursor: 'pointer', }}  onClick={() => handleNavigation('/')}/>
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold cursor-pointer" onClick={() => handleNavigation('/')}>
             Sentinel Shield
-          </h1>
+          </h1> */}
+          <div onClick={() => handleNavigation('/')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', }}>
+            <img src={logo} alt="Sentinel Shield" style={{ height: '56px', marginRight: '10px' }}/>
+            <h1 className="text-xl font-bold">Sentinel<br/> Shield</h1>
+          </div>
 
           {/* Middle Section: Navigation Links */}
           <nav className="hidden lg:flex items-center lg:mr-10 xl:mr-20 space-x-4">
@@ -241,7 +250,7 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-gray-800 px-2 py-2 fixed top-[4.5rem] left-0 w-full z-40 pt-5">
+        <div className="lg:hidden bg-gray-800 px-2 py-2 mt-4 fixed top-[4.5rem] left-0 w-full z-40 pt-5">
           <Link to="/" className="block text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" onClick={toggleMenu}>
             Home
           </Link>
@@ -281,8 +290,8 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
                   />
                 ) : (
                   <div className="w-7 h7 mr-2 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                     <div className="loading-spinner"></div>
-                    <img src={profilePlaceholder} alt="Placeholder"/>
+                    <div className="loading-spinner"></div>
+                    <img src={profilePlaceholder} alt="Placeholder" />
                     {error}
                   </div>
                 )}

@@ -193,3 +193,60 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.dome-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Adjust the height as needed */
+}
+
+.dome {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* Height of the dome */
+  background: linear-gradient(to right, #9C27B0, #42A5F5); /* Dome gradient background */
+  border-radius: 0 0 100% 100%; /* Create the dome shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1; /* Ensure content is above the dome */
+  text-align: center;
+}
+
+
+/* Media queries for different screen sizes */
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .dome {
+    height: 200px; /* Adjust the height as needed */
+    border-radius: 0 0 30% 20%; /* Adjust the border-radius for smaller screens */
+  }
+}
+
+/* Tablets and smaller desktops */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .dome {
+    height: 170px; /* Adjust the height as needed */
+    border-radius: 0 0 100% 90%; /* Adjust the border-radius for medium screens */
+  }
+}
+
+/* Larger desktops */
+@media (min-width: 1025px) {
+  .dome {
+    height: 170px; /* Adjust the height as needed */
+    border-radius: 0 0 100% 40%; /* Default border-radius for larger screens */
+  }
+}
