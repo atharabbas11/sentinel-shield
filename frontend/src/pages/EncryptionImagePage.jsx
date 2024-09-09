@@ -131,15 +131,6 @@ const EncryptionImagePage = () => {
 
     return (
         <div className="min-h-screen bg-custom-bg">
-            {/* <div
-                className="fixed inset-0 z-0"
-                style={{
-                    backgroundImage: `url(${backgroundImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    height: '100vh',
-                }}
-            ></div> */}
             <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', minHeight: '100vh' }}>
                 <main className="relative z-10 container mx-auto mt-8 p-4">
                 <div className="container mx-auto pt-32 p-4">
