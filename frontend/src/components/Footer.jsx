@@ -16,12 +16,12 @@ const Footer = () => {
       <div className="container mx-auto mt-8 p-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between mb-8 gap-1">
+            
             {/* Company Information */}
             <div className="w-full md:w-2/6 mb-6 md:mb-0">
               {/* <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold cursor-pointer mb-4" onClick={() => { navigate('/'); window.scrollTo(0, 0); }}>
                 Sentinel Shield
               </h1> */}
-              {/* <img src={logo} alt="" style={{height: '100px', cursor: 'pointer', marginBottom: '10px', }}  onClick={() => handleNavigation('/')}/> */}
               <div onClick={() => handleNavigation('/')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', marginBottom: '10px'}}>
                 <img src={logo} alt="Sentinel Shield" style={{ height: '56px', marginRight: '10px' }}/>
                 <h1 className="text-xl font-bold">Sentinel<br/> Shield</h1>
