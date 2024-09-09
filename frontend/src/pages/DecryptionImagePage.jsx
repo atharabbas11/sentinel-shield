@@ -144,7 +144,7 @@ const DecryptionImagePage = () => {
 
     return (
         <div className="min-h-screen bg-custom-bg">
-            <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'auto', backgroundPosition: 'bottom', minHeight: '100vh' }}>
+            <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'top', minHeight: '100vh' }}>
                 <main className="relative z-10 container mx-auto mt-8 p-4">
                     <div className="container mx-auto pt-32 p-4">
                         <h1 className="text-5xl font-bold mb-8 text-white text-center">Decrypt Data from Image</h1>
