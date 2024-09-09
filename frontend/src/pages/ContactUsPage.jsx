@@ -3,9 +3,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import backgroundImage1 from '../images/doted6.png'
-import contactus from '../images/contactus.png'; // Adjust the path
-import LoadingBar from '../components/LoadingBar'; // Ensure the path is correct based on your project structure
-// import backgroundImage from '../images/bg-1.png';
+import contactus from '../images/contactus.png'; 
+import LoadingBar from '../components/LoadingBar';
 import { IoMailOutline } from "react-icons/io5";
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
