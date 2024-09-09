@@ -53,12 +53,12 @@ app.use(limiter);
 // app.use(morgan('dev'));
 
 // Enable detailed logging only in development
-if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('combined'));
-  } else {
-    // Disable logging or use a minimal format in production
-    app.use(morgan('tiny'));
-  }
+// if (process.env.NODE_ENV === 'development') {
+//     app.use(morgan('combined'));
+//   } else {
+//     // Disable logging or use a minimal format in production
+//     app.use(morgan('tiny'));
+//   }
 
 // Body parser middleware
 app.use(express.json());
