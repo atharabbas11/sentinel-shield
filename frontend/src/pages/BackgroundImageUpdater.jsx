@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import BackgroundImageModal from './BackgroundImageModel'; // Import the modal component
-
+import BackgroundImageModal from './BackgroundImageModel'; 
 export default function BackgroundImageUpdater() {
   const [backgrounds, setBackgrounds] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
