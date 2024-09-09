@@ -48,11 +48,6 @@ const HomePage = ({ isLoggedIn }) => {
     }, 300); // Adjust the delay to match the desired loading duration
   };
 
-  // const handleNavigation = (path) => {
-  //   navigate(path);
-  //   window.scrollTo(0, 0);
-  // };
-
   // Intersection Observer setup 
   const [isVisible, setIsVisible] = useState({
     features: false,
@@ -132,8 +127,6 @@ const HomePage = ({ isLoggedIn }) => {
           {/* </section> */}
 
           {/* Features Section */}
-          {/* <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'top', backgroundPosition: 'center', }}> */}
-          {/* <section> */}
           <div className='mt-5 p-4'>
             <section id="features" className="flex flex-wrap items-center justify-center container mx-auto my-12" ref={featuresRef}>
               <h2 className="text-5xl font-semibold text-center mb-8 text-white">Features</h2>
@@ -206,7 +199,6 @@ const HomePage = ({ isLoggedIn }) => {
               </div>
             </section>
           </div>
-          {/* </section> */ }
         </section >
 
   <section style={{ backgroundImage: `url(${backgroundImage1})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat' }}>
@@ -228,7 +220,6 @@ const HomePage = ({ isLoggedIn }) => {
                   <button onClick={() => handleClickLoading('/aboutus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
                     Learn More
                   </button>
-                  {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/aboutus" onClick={handleClickLoding}>Learn More</a> */}
                 </div>
                 <button onClick={() => handleClickLoading('/contactus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
                   Get Started
@@ -267,7 +258,6 @@ const HomePage = ({ isLoggedIn }) => {
                   <button onClick={() => handleClickLoading('/contactus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
                     Learn More
                   </button>
-                  {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/contactus" onClick={handleClickLoading}>Learn More</a> */}
                 </div>
               </div>
             </div>
