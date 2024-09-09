@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-// import backgroundImage from '../images/bg-1.png'; // Adjust path
-import profilePlaceholder from '../images/default-profile.jpg'; // Add a placeholder image if user doesn't have one
-import BackgroundImageModal from './BackgroundImageModel'; // Adjust the path if necessary
-// import bgphoto from '../images/bg-img/1.jpg';
+import profilePlaceholder from '../images/default-profile.jpg'; // Add a profile placeholder image if user doesn't have one
+import BackgroundImageModal from './BackgroundImageModel'; 
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -236,20 +234,9 @@ const AccountInfoPage = () => {
 
   return (
     <div className="min-h-screen relative bg-custom-bg">
-      {/* Background Image */}
-      {/* <div
-        className="fixed inset-0 z-0"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100vh',
-        }}
-      ></div> */}
       <main className="relative z-10 container mx-auto mt-8 p-4">
         <div className="min-h-screen flex items-center justify-center">
           <div className="bg-white rounded shadow-md w-80 relative">
-
             {user ? (
               <>
                 <div
@@ -260,25 +247,9 @@ const AccountInfoPage = () => {
                     backgroundPosition: 'center',
                   }}
                 >
-                  {/* Additional content or child elements can go here */}
                 </div>
                 <div className='pl-4 pr-4 pb-4'>
                   <div className="flex justify-center mb-4 relative">
-                    {/* {profileImage ? (
-                      <img
-                        src={`${profileImage}`}
-                        alt="Profile"
-                        className="w-28 h-28 rounded-full absolute bottom-0"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = profilePlaceholder;
-                        }}
-                      />
-                    ) : (
-                      <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center">
-                        <img src={profilePlaceholder} alt="Placeholder" />
-                      </div>
-                    )}  */}
                     <img
                       src={profileImage || profilePlaceholder}
                       alt={profileImage ? "Profile" : "Placeholder"}
@@ -302,7 +273,6 @@ const AccountInfoPage = () => {
                     />
                   </div>
 
-                  {/* </div> */}
                   {/* User Info */}
                   <div className="mt-6 mb-4 text-center">
                     <label className="block mb-1 font-semibold">User ID</label>
@@ -347,7 +317,6 @@ const AccountInfoPage = () => {
                         </button>
                       )}
 
-                      {/* <button onClick={() => setShowNameEdit(true)} className="w-full py-2 mb-2 bg-violet-500 text-white rounded hover:bg-violet-600"> */}
                       <button onClick={toggleNameChange} className="w-full py-2 mb-2 bg-violet-500 text-white rounded hover:bg-violet-600">
                         Update Name
                       </button>
