@@ -1,14 +1,10 @@
 // src/pages/AboutUsPage.js
 import React, { useState, useRef, useEffect } from 'react';
 import backgroundImage1 from '../images/doted6.png'
-import aboutus from '../images/aboutus.png'; // Adjust the path
-// import LoadingBar from '../components/LoadingBar'; // Ensure the path is correct based on your project structure
+import aboutus from '../images/aboutus.png';
 import { RiTeamLine } from "react-icons/ri";
 
 const AboutUsPage = () => {
-
-  // const [loading, setLoading] = useState(false);
-
   
   // Intersection Observer setup
   const [isVisible, setIsVisible] = useState({
@@ -51,7 +47,6 @@ const AboutUsPage = () => {
 
   return (
     <div className="min-h-screen relative bg-custom-bg">
-      {/* <LoadingBar loading={loading} /> */}
       <section style={{ backgroundImage: `url(${backgroundImage1})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', height: '100vh' }}>
         <main className="relative z-10 container mx-auto mt-8 p-4">
           <section id="aboutus" className="my-12 mt-20" ref={featuresRef}>
