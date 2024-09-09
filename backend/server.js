@@ -25,22 +25,14 @@ connectDB();
 // Security and CORS Middleware
 app.use(helmet());
 
-// Read the allowed origin from the environment variable
 const allowedOrigin = process.env.ALLOWED_ORIGIN;
 
 // Configure CORS
 app.use(cors({
-    origin: (origin, callback) => {
-        // const allowedOrigins = ['https://sentinel-shield-frontend.onrender.com'];
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: 'Content-Type, Authorization',
-    credentials: true
+  origin: allowedOrigin,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  allowedHeaders: 'Content-Type, Authorization',
+  credentials: true
 }));
 
 // app.use(cors({
