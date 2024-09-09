@@ -124,16 +124,16 @@ const HomePage = ({ isLoggedIn }) => {
                   src={mainimage}
                   alt="Main"
                   className="max-w-full h-auto animate-floatEffect m-10"
-                  // style={{ animation: "floatEffect 6s infinite ease-in-out" }}
+                // style={{ animation: "floatEffect 6s infinite ease-in-out" }}
                 />
               </div>
             </section>
           </div>
-        {/* </section> */}
+          {/* </section> */}
 
-        {/* Features Section */}
-        {/* <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'top', backgroundPosition: 'center', }}> */}
-        {/* <section> */}
+          {/* Features Section */}
+          {/* <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'top', backgroundPosition: 'center', }}> */}
+          {/* <section> */}
           <div className='mt-5 p-4'>
             <section id="features" className="flex flex-wrap items-center justify-center container mx-auto my-12" ref={featuresRef}>
               <h2 className="text-5xl font-semibold text-center mb-8 text-white">Features</h2>
@@ -151,12 +151,13 @@ const HomePage = ({ isLoggedIn }) => {
                     <img
                       style={{ color: "transparent" }}
                       className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 h-56"
-                      src={feature1}
-                      alt='feature1'
+                      src={feature2}
+                      alt='feature2'
                     />
                     <p className='text-gray-300 font-sans text-base'>Secure your messages with cutting-edge encryption algorithms. Our technology guarantees complete privacy and protection, ensuring your communications remain confidential and shielded from unauthorized access for maximum security.</p>
                   </div>
                 </div>
+
 
                 <div className="relative group">
                   <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
@@ -198,7 +199,6 @@ const HomePage = ({ isLoggedIn }) => {
                   </div>
                 </div>
               </div>
-              
               <div className="flex justify-center">
                 <button onClick={() => handleClickLoading('/features')} className="px-4 py-2 m-6 bg-blue-600 text-white rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
                   Learn More
@@ -206,817 +206,335 @@ const HomePage = ({ isLoggedIn }) => {
               </div>
             </section>
           </div>
-        {/* </section> */}
-        </section>
+          {/* </section> */ }
+        </section >
 
-        <section style={{ backgroundImage: `url(${backgroundImage1})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat' }}>
-          <section id="aboutus" className="container mx-auto my-12" ref={featuresRef}>
-            {/* About Section */}
-            <div className="relative p-5">
-              <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-                <div className={`my-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 ${isVisible.about ? 'slide-in-right' : ''}`}>
-                  <div>
-                    <div className='lg:mx-auto lg:flex lg:justify-end mb-6'>
-                      <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-400 to-purple-500">
-                        <RiTeamLine size={32} color='white' />
-                      </span>
-                    </div>
-                    <div className="mt-6">
-                      <h2 className="xl:text-right lg:text-right md:text-left text-4xl font-semibold mb-6 text-white">About Us</h2>
-                      <p className="xl:text-right lg:text-right md:text-left inline-flex justify-end mt-4 text-lg text-gray-300">We are passionate about the art and science of steganography. Our mission is to provide powerful tools that help you communicate securely and privately.</p>
-                      <div className="lg:mx-auto lg:flex lg:justify-end mt-6">
-                        <button onClick={() => handleClickLoading('/aboutus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
-                          Learn More
-                        </button>
-                        {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/aboutus" onClick={handleClickLoding}>Learn More</a> */}
-                      </div>
-                    </div>
-                  </div>
+  <section style={{ backgroundImage: `url(${backgroundImage1})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat' }}>
+    <section id="aboutus" className="container mx-auto my-12" ref={featuresRef}>
+      {/* About Section */}
+      <div className="relative p-5">
+        <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+          <div className={`my-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 ${isVisible.about ? 'slide-in-right' : ''}`}>
+            <div>
+              <div className='lg:mx-auto lg:flex lg:justify-end mb-6'>
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-400 to-purple-500">
+                  <RiTeamLine size={32} color='white' />
+                </span>
+              </div>
+              <div className="mt-6">
+                <h2 className="xl:text-right lg:text-right md:text-left text-4xl font-semibold mb-6 text-white">About Us</h2>
+                <p className="xl:text-right lg:text-right md:text-left inline-flex justify-end mt-4 text-lg text-gray-300">We are passionate about the art and science of steganography. Our mission is to provide powerful tools that help you communicate securely and privately.</p>
+                <div className="lg:mx-auto lg:flex lg:justify-end mt-6">
+                  <button onClick={() => handleClickLoading('/aboutus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
+                    Learn More
+                  </button>
+                  {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/aboutus" onClick={handleClickLoding}>Learn More</a> */}
                 </div>
-
-                <div className="mt-12 sm:mt-16 lg:mt-0">
-                  <div className="flex justify-center mx-auto">
-                    <img width="647" height="486" style={{ color: "transparent" }} src={aboutus} alt='aboutus' />
-                  </div>
-                </div>
+                <button onClick={() => handleClickLoading('/contactus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
+                  Get Started
+                </button>
               </div>
             </div>
-          </section>
+          </div>
 
-          <section id="contactus" className="container mx-auto my-12" ref={featuresRef}>
-            {/* Contact Section */}
-            <div className="relative">
-              <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-                <div className={`my-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 lg:col-start-2 ${isVisible.about ? 'slide-in-right' : ''}`}>
-                  <div>
-                    <div>
-                      <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-400 to-purple-500">
-                        <IoMailOutline size={32} color='white' />
-                      </span>
-                    </div>
-
-                    <div className="mt-6">
-                      <h2 className="text-4xl font-semibold mb-6 text-white">Contact Us</h2>
-                      <p className="mt-4 text-lg text-gray-300">Have questions or feedback? We'd love to hear from you. Reach out to us at{' '}
-                        <a href="mailto:testingmyproject101@gmail.com" className="text-blue-600 hover:underline break-words">testingmyproject101@gmail.com</a>.
-                      </p>
-                      <div className="mt-6">
-                        <button onClick={() => handleClickLoading('/contactus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
-                          Learn More
-                        </button>
-                        {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/contactus" onClick={handleClickLoading}>Learn More</a> */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-12 sm:mt-16 lg:mt-0">
-                  <div className="flex justify-center mx-auto">
-                    <img
-                      width="647" height="486"
-                      style={{ color: "transparent" }}
-                      src={contactus}
-                      alt='contactus'
-                    />
-                  </div>
-                </div>
-              </div>
+          <div className="mt-12 sm:mt-16 lg:mt-0">
+            <div className="flex justify-center mx-auto">
+              <img width="647" height="486" style={{ color: "transparent" }} src={aboutus} alt='aboutus' />
             </div>
-            {/* </div> */}
-          </section>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        {/* Testimonies Section */}
-        <section id="testimonies" className=" py-2">
-          <div className="relative w-full h-[200px] overflow-hidden">
-            <div className="dome-container">
-              <div className="dome">
-                <div className="content-wrapper">
-                  <div className="space-y-5 md:text-center">
-                    <div className="inline-block px-3 py-1 text-base font-semibold text-indigo-100 rounded-lg md:text-center text-cn bg-black bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40">
-                      Words from Others
-                    </div>
-                    <h1 className="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
-                      It's not just us.
-                    </h1>
-                    <p className="text-xl text-gray-100 md:text-center md:text-2xl">
-                      Here's what others have to say about us.
-                    </p>
-                  </div>
+    <section id="contactus" className="container mx-auto my-12" ref={featuresRef}>
+      {/* Contact Section */}
+      <div className="relative">
+        <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+          <div className={`my-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 lg:col-start-2 ${isVisible.about ? 'slide-in-right' : ''}`}>
+            <div>
+              <div>
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-400 to-purple-500">
+                  <IoMailOutline size={32} color='white' />
+                </span>
+              </div>
+
+              <div className="mt-6">
+                <h2 className="text-4xl font-semibold mb-6 text-white">Contact Us</h2>
+                <p className="mt-4 text-lg text-gray-300">Have questions or feedback? We'd love to hear from you. Reach out to us at{' '}
+                  <a href="mailto:testingmyproject101@gmail.com" className="text-blue-600 hover:underline break-words">testingmyproject101@gmail.com</a>.
+                </p>
+                <div className="mt-6">
+                  <button onClick={() => handleClickLoading('/contactus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
+                    Learn More
+                  </button>
+                  {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/contactus" onClick={handleClickLoading}>Learn More</a> */}
                 </div>
               </div>
             </div>
           </div>
-          <section id="testimonies" className="container mx-auto py-2">
-            <div className="mt-10 mb-10 max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
 
-              {/* Heading */}
-              {/* <div class="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
-                <div class="mb-12 space-y-5 md:mb-16 md:text-center">
-                  <div class="inline-block px-3 py-1 text-base font-semibold text-indigo-100 rounded-lg md:text-center text-cn bg-black bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40">
-                    Words from Others
+          <div className="mt-12 sm:mt-16 lg:mt-0">
+            <div className="flex justify-center mx-auto">
+              <img
+                width="647" height="486"
+                style={{ color: "transparent" }}
+                src={contactus}
+                alt='contactus'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* </div> */}
+    </section>
+  </section>
+
+{/* Testimonies Section */ }
+<section id="testimonies" className=" py-2">
+  <div className="relative w-full h-[200px] overflow-hidden">
+    <div className="dome-container">
+      <div className="dome">
+        <div className="content-wrapper">
+          <div className="space-y-5 md:text-center">
+            <div className="inline-block px-3 py-1 text-base font-semibold text-indigo-100 rounded-lg md:text-center text-cn bg-black bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40">
+              Words from Others
+            </div>
+            <h1 className="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
+              It's not just us.
+            </h1>
+            <p className="text-xl text-gray-100 md:text-center md:text-2xl">
+              Here's what others have to say about us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="testimonies" className="container mx-auto py-2">
+    <div className="mt-10 mb-10 max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
+      {/* Unequal height Testimonies Cards */}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        {/* Column 1 */}
+        <ul className="space-y-8">
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Kanye West</h3>
+                    <p className="text-gray-500 text-md">Rapper &amp; Entrepreneur</p>
                   </div>
-                  <h1 class="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
-                    It's not just us.
-                  </h1>
-                  <p class="text-xl text-gray-100 md:text-center md:text-2xl">
-                    Here's what others have to say about us.
-                  </p>
                 </div>
-                </div> */}
-
-              {/* Unequal height Testimonies Cards */}
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-              {/* Column 1 */}
-              <ul className="space-y-8">
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Kanye West</h3>
-                          <p className="text-gray-500 text-md">Rapper &amp; Entrepreneur</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Find God.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div
-                      className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
-                          <p className="text-gray-500 text-md">CEO of Apple</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4"><img src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Kanye West</h3>
-                          <p className="text-gray-500 text-md">Rapper &amp; Entrepreneur</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Find God.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
-                          <p className="text-gray-500 text-md">CEO of Apple</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisquefermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittisaliquam malesuada bibendum.</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-
-              {/* Column 2 */}
-              <ul className="hidden space-y-8 sm:block">
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Parag Agrawal</h3>
-                          <p className="text-gray-500 text-md">CEO of Twitter</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitaesemper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quampellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
-                          <p className="text-gray-500 text-md">CEO of Apple</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Parag Agrawal</h3>
-                          <p className="text-gray-500 text-md">CEO of Twitter</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitaesemper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quampellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
-                          <p className="text-gray-500 text-md">CEO of Apple</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-
-              {/* Column 3 */}
-              <ul className="hidden space-y-8 lg:block">
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Satya Nadella</h3>
-                          <p className="text-gray-500 text-md">CEO of Microsoft</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean ettortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquameleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Dan Schulman</h3>
-                          <p className="text-gray-500 text-md">CEO of PayPal</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam semet tortor consequat id. Enim sit amet venenatis urna cursus.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Satya Nadella</h3>
-                          <p className="text-gray-500 text-md">CEO of Microsoft</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean ettortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquameleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="text-sm leading-6">
-                  <div className="relative group">
-                    <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                    </div>
-                    <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                      <div className="flex items-center space-x-4">
-                        <img src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman" />
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">Dan Schulman</h3>
-                          <p className="text-gray-500 text-md">CEO of PayPal</p>
-                        </div>
-                      </div>
-                      <p className="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam semet tortor consequat id. Enim sit amet venenatis urna cursus.</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-
+                <p className="leading-normal text-gray-300 text-md">Find God.</p>
               </div>
             </div>
-          </section>
-        </section>
-      </main>
-    </div>
-  );
+          </li>
 
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div
+                className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
+                    <p className="text-gray-500 text-md">CEO of Apple</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
+              </div>
+            </div>
+          </li>
+
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4"><img src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Kanye West</h3>
+                    <p className="text-gray-500 text-md">Rapper &amp; Entrepreneur</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Find God.</p>
+              </div>
+            </div>
+          </li>
+
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
+                    <p className="text-gray-500 text-md">CEO of Apple</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisquefermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittisaliquam malesuada bibendum.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        {/* Column 2 */}
+        <ul className="hidden space-y-8 sm:block">
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Parag Agrawal</h3>
+                    <p className="text-gray-500 text-md">CEO of Twitter</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitaesemper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quampellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
+              </div>
+            </div>
+          </li>
+
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
+                    <p className="text-gray-500 text-md">CEO of Apple</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
+              </div>
+            </div>
+          </li>
+
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Parag Agrawal</h3>
+                    <p className="text-gray-500 text-md">CEO of Twitter</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitaesemper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quampellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
+              </div>
+            </div>
+          </li>
+
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
+                    <p className="text-gray-500 text-md">CEO of Apple</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        {/* Column 3 */}
+        <ul className="hidden space-y-8 lg:block">
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Satya Nadella</h3>
+                    <p className="text-gray-500 text-md">CEO of Microsoft</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean ettortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquameleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
+              </div>
+            </div>
+          </li>
+
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Dan Schulman</h3>
+                    <p className="text-gray-500 text-md">CEO of PayPal</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam semet tortor consequat id. Enim sit amet venenatis urna cursus.</p>
+              </div>
+            </div>
+          </li>
+
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Satya Nadella</h3>
+                    <p className="text-gray-500 text-md">CEO of Microsoft</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean ettortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquameleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
+              </div>
+            </div>
+          </li>
+
+          <li className="text-sm leading-6">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+              </div>
+              <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                <div className="flex items-center space-x-4">
+                  <img src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Dan Schulman</h3>
+                    <p className="text-gray-500 text-md">CEO of PayPal</p>
+                  </div>
+                </div>
+                <p className="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam semet tortor consequat id. Enim sit amet venenatis urna cursus.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+</section>
+      </main >
+    </div >
+  );
 };
 
 
 export default HomePage;
-
-
-// return (
-//   <div className="relative bg-custom-bg">
-//     {/* Initial image */}
-//     {/* <div
-//       className="absolute inset-0 z-0"
-//       style={{
-//         backgroundImage: `url(${backgroundImage})`,
-//         backgroundSize: 'cover',
-//         backgroundPosition: 'center',
-//         height: '125vh',
-//       }}
-//     ></div> */}
-
-
-//     <div
-//       className="absolute inset-0 z-0"
-//       style={{
-//         backgroundImage: `url(${backgroundImage})`,
-//         backgroundSize: 'cover',
-//         backgroundPosition: 'center',
-//         height: '127vh',
-//       }}
-//     ></div>
-
-//     <div
-//       className="absolute inset-0 z-10"
-//       style={{
-//         backgroundImage: `url(${backgroundImage1})`,
-//         backgroundSize: 'auto', // Ensure the image is displayed at its original size
-//         backgroundRepeat: 'repeat', // Repeat the background image
-//         backgroundPosition: 'center', // Position the image at the center
-//         top: '130vh', // Position below the first image
-//         height: '128vh', // Set height for this div
-//         width: '100vw', // Set width for this div
-//         opacity: '30%'
-//       }}
-//     ></div>
-
-
-//     <div
-//       className="absolute inset-0 z-10"
-//       style={{
-//         backgroundImage: `url(${backgroundImage2})`,
-//         backgroundPosition: 'start', // Position the image at the center
-//         top: '260vh', // Position below the first image
-//         height: '127vh', // Set height for this div
-//         width: '100vw', // Set width for this div
-//         opacity: '30%'
-//       }}
-//     ></div>
-
-//     {/* <div
-//       className="absolute inset-0 z-20"
-//       style={{
-//         backgroundImage: `url(${backgroundImage})`,
-//         backgroundSize: 'cover',
-//         backgroundPosition: 'center',
-//         height: '100vh', // Third image covers full viewport height
-//         width: '100vw',
-//         top: '125vh' // Adjust top to stack the third image below the second
-//       }}
-//     ></div> */}
-
-
-//     <LoadingBar loading={loading} />
-
-//     {/* Page content */}
-//     <main className="relative z-10 container mx-auto mt-8 p-4">
-
-//       {/* Main Section */}
-//       <section className="flex flex-wrap items-center justify-center pt-12 mt-10">
-//         <div className="w-full lg:w-2/5 text-center md:text-left px-4 p-4">
-//           <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-//             Unveil Hidden{' '}
-//             <span className="text-red-500 text-3xl md:text-5xl">&lt;</span>
-//             <span className="text-4xl md:text-6xl text-white">Messages</span> /
-//             <span className="text-red-500 text-3xl md:text-5xl">&gt;</span>
-//           </h2>
-//           <p className="text-lg mb-6 font-sans font-semibold text-white">
-//             Explore the world of steganography with our intuitive application that allows you to hide and reveal messages within images securely.
-//           </p>
-//           <button onClick={handleClick} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
-//             Get Started
-//           </button>
-//         </div>
-//         <div className="w-full lg:w-3/5 flex justify-center">
-//           <img
-//             src={mainimage}
-//             alt="Main"
-//             className="max-w-full h-auto animate-floatEffect m-10"
-//             style={{ animation: "floatEffect 6s infinite ease-in-out" }}
-//           />
-//         </div>
-//       </section>
-
-//       {/* Features Section */}
-//       <section id="features" className="my-12" ref={featuresRef}>
-//         <h2 className="text-5xl font-semibold text-center mb-8 text-white">Features</h2>
-//         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${isVisible.features ? 'fade-in' : ''}`}>
-//           <div class="relative group">
-//             <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//             </div>
-//             <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//               <h3 className="text-xl font-bold mb-2 text-white">Secure Encryption</h3>
-//               <img
-//                 style={{ color: "transparent" }}
-//                 className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 h-56"
-//                 src={feature1}
-//                 alt='feature1'
-//               />
-//               <p className='text-white font-sans text-base'>Secure your messages with cutting-edge encryption algorithms. Our technology guarantees complete privacy and protection, ensuring your communications remain confidential and shielded from unauthorized access for maximum security.</p>
-//             </div>
-//           </div>
-
-//           <div class="relative group">
-//             <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//             </div>
-//             <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//               <h3 className="text-xl font-bold mb-2 text-white">Easy-to-Use Interface</h3>
-//               <img
-//                 style={{ color: "transparent" }}
-//                 className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 h-56"
-//                 src={feature2}
-//                 alt='feature2'
-//               />
-//               <p className='text-white font-sans text-base'>Our intuitive interface simplifies encoding and decoding messages, making the process effortless and straightforward. Experience a seamless way to secure your communications without hassle or complexity in managing your encryption needs.</p>
-//             </div>
-//           </div>
-
-//           <div class="relative group">
-//             <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//             </div>
-//             <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//               <h3 className="text-xl font-bold mb-2 text-white">Seamless Integration</h3>
-//               <img
-//                 style={{ color: "transparent" }}
-//                 className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 h-56"
-//                 src={feature3}
-//                 alt='feature3'
-//               />
-//               <p className='text-white font-sans text-base'>Integrate effortlessly with your favorite tools to streamline your workflow. Our solution ensures smooth connectivity, enabling efficient task management and boosting productivity without disrupting your existing systems or processes.</p>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="flex justify-center">
-//           <button onClick={() => handleClickLoading('/features')} className="px-4 py-2 m-6 bg-blue-600 text-white rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
-//             Learn More
-//           </button>
-//         </div>
-//       </section>
-
-//       <section id="aboutus" className="my-12" ref={featuresRef}>
-//         {/* About Section */}
-//         <div className="relative">
-//           <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-//             <div className={`my-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 ${isVisible.about ? 'slide-in-right' : ''}`}>
-//               <div>
-//                 <div className='lg:mx-auto lg:flex lg:justify-end mb-6'>
-//                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-400 to-purple-500">
-//                     <RiTeamLine size={32} color='white' />
-//                   </span>
-//                 </div>
-//                 <div classNmae="mt-6">
-//                   <h2 className="xl:text-right lg:text-right md:text-left text-4xl font-semibold mb-6 text-gray-300">About Us</h2>
-//                   <p className="xl:text-right lg:text-right md:text-left inline-flex justify-end mt-4 text-lg text-gray-300">We are passionate about the art and science of steganography. Our mission is to provide powerful tools that help you communicate securely and privately.</p>
-//                   <div className="lg:mx-auto lg:flex lg:justify-end mt-6">
-//                     <button onClick={() => handleClickLoading('/aboutus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
-//                       Get Started
-//                     </button>
-//                     {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/aboutus" onClick={handleClickLoding}>Learn More</a> */}
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-
-//             <div className="mt-12 sm:mt-16 lg:mt-0">
-//               <div className="flex justify-center mx-auto">
-//                 <img width="647" height="486" style={{ color: "transparent" }} src={aboutus} alt='aboutus' />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       <section id="contactus" className="my-12" ref={featuresRef}>
-//         {/* Contact Section */}
-//         <div className="relative">
-//           <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-//             <div className={`my-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 lg:col-start-2 ${isVisible.about ? 'slide-in-right' : ''}`}>
-//               <div>
-//                 <div>
-//                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-400 to-purple-500">
-//                     <IoMailOutline size={32} color='white' />
-//                   </span>
-//                 </div>
-
-//                 <div className="mt-6">
-//                   <h2 className="text-4xl font-semibold mb-6 text-gray-300">Contact Us</h2>
-//                   <p className="mt-4 text-lg text-gray-300">Have questions or feedback? We'd love to hear from you. Reach out to us at{' '}
-//                     <a href="mailto:testingmyproject101@gmail.com" className="text-blue-600 hover:underline break-words">testingmyproject101@gmail.com</a>.
-//                   </p>
-//                   <div className="mt-6">
-//                     <button onClick={() => handleClickLoading('/contactus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
-//                       Get Started
-//                     </button>
-//                     {/* <a className="inline-flex justify-end rounded bg-blue-600 text-white px-4 py-2 text-base font-semibold leading-7 hover:bg-blue-700 " href="/contactus" onClick={handleClickLoading}>Learn More</a> */}
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-
-//             <div className="mt-12 sm:mt-16 lg:mt-0">
-//               <div className="flex justify-center mx-auto">
-//                 <img
-//                   width="647" height="486"
-//                   style={{ color: "transparent" }}
-//                   src={contactus}
-//                   alt='contactus'
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//         {/* </div> */}
-//       </section>
-
-//       {/* Testimonies Section */}
-//       <section id="testimonies" class="py-2">
-//         <div class="mt-10 mb-10 max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
-
-//           {/* Heading */}
-//           <div class="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
-//             <div class="mb-12 space-y-5 md:mb-16 md:text-center">
-//               <div class="inline-block px-3 py-1 text-base font-semibold text-indigo-100 rounded-lg md:text-center text-cn bg-black bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40">
-//                 Words from Others
-//               </div>
-//               <h1 class="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
-//                 It's not just us.
-//               </h1>
-//               <p class="text-xl text-gray-100 md:text-center md:text-2xl">
-//                 Here's what others have to say about us.
-//               </p>
-//             </div>
-//           </div>
-
-//           {/* Unequal height Testimonies Cards */}
-//           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-//             {/* Column 1 */}
-//             <ul class="space-y-8">
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Kanye West</h3>
-//                         <p class="text-gray-500 text-md">Rapper &amp; Entrepreneur</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Find God.</p>
-//                   </div>
-//                 </div>
-//               </li>
-
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div
-//                     class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Tim Cook</h3>
-//                         <p class="text-gray-500 text-md">CEO of Apple</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
-//                   </div>
-//                 </div>
-//               </li>
-
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4"><img src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Kanye West</h3>
-//                         <p class="text-gray-500 text-md">Rapper &amp; Entrepreneur</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Find God.</p>
-//                   </div>
-//                 </div>
-//               </li>
-
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Tim Cook</h3>
-//                         <p class="text-gray-500 text-md">CEO of Apple</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisquefermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittisaliquam malesuada bibendum.</p>
-//                   </div>
-//                 </div>
-//               </li>
-//             </ul>
-
-//             {/* Column 2 */}
-//             <ul class="hidden space-y-8 sm:block">
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Parag Agrawal</h3>
-//                         <p class="text-gray-500 text-md">CEO of Twitter</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitaesemper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quampellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
-//                   </div>
-//                 </div>
-//               </li>
-
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Tim Cook</h3>
-//                         <p class="text-gray-500 text-md">CEO of Apple</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
-//                   </div>
-//                 </div>
-//               </li>
-
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Parag Agrawal</h3>
-//                         <p class="text-gray-500 text-md">CEO of Twitter</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitaesemper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quampellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
-//                   </div>
-//                 </div>
-//               </li>
-
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Tim Cook</h3>
-//                         <p class="text-gray-500 text-md">CEO of Apple</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.</p>
-//                   </div>
-//                 </div>
-//               </li>
-//             </ul>
-
-//             {/* Column 3 */}
-//             <ul class="hidden space-y-8 lg:block">
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Satya Nadella</h3>
-//                         <p class="text-gray-500 text-md">CEO of Microsoft</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean ettortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquameleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
-//                   </div>
-//                 </div>
-//               </li>
-
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Dan Schulman</h3>
-//                         <p class="text-gray-500 text-md">CEO of PayPal</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam semet tortor consequat id. Enim sit amet venenatis urna cursus.</p>
-//                   </div>
-//                 </div>
-//               </li>
-
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Satya Nadella</h3>
-//                         <p class="text-gray-500 text-md">CEO of Microsoft</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean ettortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquameleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
-//                   </div>
-//                 </div>
-//               </li>
-
-//               <li class="text-sm leading-6">
-//                 <div class="relative group">
-//                   <div class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-//                   </div>
-//                   <div class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-//                     <div class="flex items-center space-x-4">
-//                       <img src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg" class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman" />
-//                       <div>
-//                         <h3 class="text-lg font-semibold text-white">Dan Schulman</h3>
-//                         <p class="text-gray-500 text-md">CEO of PayPal</p>
-//                       </div>
-//                     </div>
-//                     <p class="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam semet tortor consequat id. Enim sit amet venenatis urna cursus.</p>
-//                   </div>
-//                 </div>
-//               </li>
-//             </ul>
-
-//           </div>
-//         </div>
-//       </section>
-//     </main>
-//   </div>
-// );

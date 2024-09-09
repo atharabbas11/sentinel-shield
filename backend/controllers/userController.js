@@ -75,26 +75,6 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 
-// Get user profile
-// const getUserProfile = asyncHandler(async (req, res) => {
-//     const user = await User.findById(req.user._id);
-
-//     if (user) {
-//          // Construct the profile image URL with forward slashes to get correcr url from DB
-//          const profileImageUrl = user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
-
-//         res.json({
-//             _id: user._id,
-//             name: user.name,
-//             email: user.email,
-//             // profileImage: user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage}` : null,
-//             profileImage: profileImageUrl,
-//         });
-//     } else {
-//         res.status(404).json({ message: 'User not found' }); // Include a failure message
-//     }
-// });
-
 const getUserProfile = asyncHandler(async (req, res) => {
     try {
         const user = await User.findById(req.user._id);
@@ -122,8 +102,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
     }
 });
 
-
-
 const updateBackgroundImage = async (req, res) => {
   try {
     const userId = req.user.id; // Assuming user ID is obtained from authentication middleware
@@ -148,13 +126,7 @@ const updateBackgroundImage = async (req, res) => {
   }
 };
 
-module.exports = {
-  updateBackgroundImage,
-};
-
-
 module.exports = { registerUser, authUser, getUserProfile, getUserId, generateToken, updateBackgroundImage };
-
 
 
 

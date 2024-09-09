@@ -24,6 +24,11 @@ connectDB();
 
 // Security and CORS Middleware
 app.use(helmet());
+
+// Read the allowed origin from the environment variable
+const allowedOrigin = process.env.ALLOWED_ORIGIN;
+
+// Configure CORS
 app.use(cors({
     origin: (origin, callback) => {
         const allowedOrigins = ['http://localhost:3000', 'http://192.168.0.147:3000', 'https://sentinel-shield-frontend.onrender.com/'];
@@ -33,7 +38,8 @@ app.use(cors({
             callback(new Error('Not allowed by CORS'));
         }
     },
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization',
     credentials: true
 }));
 
@@ -53,6 +59,7 @@ app.use(limiter);
 
 // Logging
 // app.use(morgan('dev'));
+
 // Enable detailed logging only in development
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('combined'));
@@ -71,13 +78,14 @@ app.use('/api/contact', contactRoutes);
 // Serve static files from the uploads directory
 // app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Middleware to set CORS headers
 app.use('/uploads', (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // Allow from your frontend URL
+    res.header('Access-Control-Allow-Origin', allowedOrigin); // Allow from your frontend URL
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.header('Cross-Origin-Resource-Policy', 'cross-origin'); // Allows cross-origin requests
     next();
-  }, express.static(path.join(__dirname, 'uploads')));
+}, express.static(path.join(__dirname, 'uploads')));
 
 app.use((err, req, res, next) => {
     console.error(err.stack);

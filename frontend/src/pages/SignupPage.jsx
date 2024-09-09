@@ -46,18 +46,7 @@ const SignupPage = () => {
     <div className="relative bg-custom-bg">
       <LoadingBar loading={loading} /> {/* Show the loading bar when loading */}
       <section>
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundPosition: 'bottom',
-            backgroundRepeat: 'repeat',
-            opacity: '50%',
-            height: '100vh',
-            width: '100%',
-            backgroundSize: 'cover'
-          }}
-        ></div>
+        <div className="absolute inset-0 z-0" style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: 'bottom', backgroundRepeat: 'repeat', opacity: '50%', height: '100vh', width: '100%', backgroundSize: 'cover'}}></div>
         <div className="relative z-10 min-h-screen flex items-center justify-center">
           <div className="bg-white p-8 rounded shadow-md w-custom-340">
             <h2 className="text-3xl mb-6 font-bold text-center">Sign Up</h2>
@@ -119,7 +108,7 @@ const SignupPage = () => {
 
 export default SignupPage;
 
-// return (
+{/* // return (
 //   <div>
 //     <LoadingBar loading={loading} /> {/* Show the loading bar when loading */}
 //     <div className="min-h-screen flex items-center justify-center bg-gray-100">

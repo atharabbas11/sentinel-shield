@@ -35,6 +35,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+
 router.post('/forgot-password', async (req, res) => {
   const { email } = req.body;
   try {
@@ -49,7 +50,7 @@ router.post('/forgot-password', async (req, res) => {
     // basic code for testing
     // const mailOptions = {
     //   to: user.email,
-    //   from: 'testingmyproject101@gmail.com',
+    //   from: process.env.FROM_EMAIL,
     //   subject: 'Password Reset OTP',
     //   text: `Your OTP for password reset is ${otp}. It is valid for 15 minutes.`,
     // };
@@ -157,14 +158,14 @@ router.post('/upload-profile-image', protect, upload.single('image'), async (req
     // Check if the user already has a profile image and delete it
     if (user.profileImage) {
       const oldImagePath = path.join(__dirname, '..', user.profileImage);
-      // Debugging laura ka kam nahi kara tho
+      // Debugging 
       // console.log('Attempting to delete old image at path:', oldImagePath);
 
       fs.unlink(oldImagePath, (err) => {
         if (err) {
           console.error('Error deleting old profile image:', err);
         } else {
-          // Debugging laura ka kam nahi kara tho
+          // Debugging 
           // console.log('Successfully deleted old profile image');
         }
       });
@@ -214,7 +215,7 @@ const sendOtpEmail = async (to, otp) => {
   // basic code for testing
   // const mailOptions = {
   //   to,
-  //   from: 'testingmyproject101@gmail.com',
+  //   from: process.env.FROM_EMAIL,
   //   subject: 'Email Change OTP',
   //   text: `Your OTP for changing email is ${otp}. It is valid for 15 minutes.`,
   // };

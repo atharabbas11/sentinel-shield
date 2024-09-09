@@ -23,8 +23,8 @@ const ForgotPasswordPage = () => {
   useEffect(() => {
     // Check if the user is logged in
     setLoggedIn(isLoggedIn());
-}, []);
-  
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -88,7 +88,7 @@ const ForgotPasswordPage = () => {
             </form>
           </div>
         </div>
-      </section>
+    </section>
     </div>
   );
 };

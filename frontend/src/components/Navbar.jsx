@@ -22,9 +22,7 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
 
   const handleSignOutClick = async () => {
     setLoading(true); // Show loading indicator
-    // console.log('Loading state:', loading); // Check if loading is true
-
-    // Introduce a delay to ensure the loading bar is visible
+    
     await new Promise((resolve) => setTimeout(resolve, 500)); // Delay for 500 milliseconds
 
     try {
@@ -46,12 +44,9 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
       // Clear cookies or other application state if needed
       // Cookies.remove('sessionCookie'); // Example for removing cookies, if applicable
 
-      // Delay for a smooth transition (optional)
-      // setTimeout(() => {
       setLoading(false);
       navigate('/'); // Redirect to the homepage
       window.location.reload(); // Reload the page after sign-out
-      // }, 100); // 1.5 seconds delay for better UX
 
     } catch (error) {
       console.error('Error during sign-out:', error);

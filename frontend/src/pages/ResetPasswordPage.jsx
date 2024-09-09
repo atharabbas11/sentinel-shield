@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../images/bglogin5.png';
 // import { BarLoader } from 'react-spinners';
 import LoadingBar from '../components/LoadingBar'; // Ensure the path is correct based on your project structure
-
 const apiUrl = process.env.REACT_APP_API_URL;
 
 const ResetPasswordPage = () => {
@@ -50,11 +49,7 @@ const ResetPasswordPage = () => {
 
   return (
     <div className="relative bg-custom-bg">
-      {/* {loading && (
-        <div className="fixed top-0 left-0 w-full z-50">
-          <BarLoader color="#1a202c" width="100%" />
-        </div>
-      )} */}
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <LoadingBar loading={loading} />
       <section>
         <div
@@ -115,6 +110,7 @@ const ResetPasswordPage = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

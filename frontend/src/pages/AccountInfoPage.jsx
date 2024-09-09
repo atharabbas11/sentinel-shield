@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../images/bg-1.png'; // Adjust path
+// import backgroundImage from '../images/bg-1.png'; // Adjust path
 import profilePlaceholder from '../images/default-profile.jpg'; // Add a placeholder image if user doesn't have one
-import bgphoto from '../images/bg-img/bg-default.jpg';
 import BackgroundImageModal from './BackgroundImageModel'; // Adjust the path if necessary
+// import bgphoto from '../images/bg-img/1.jpg';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -21,13 +21,12 @@ const predefinedBgImages = [
   // Add more predefined background images as needed
 ];
 
+
 const AccountInfoPage = () => {
   const [user, setUser] = useState(null); // Initialize as null
   const [selectedImage, setSelectedImage] = useState(null); // Store the selected image
   const [profileImage, setProfileImage] = useState(''); // Store the user's profile image URL
-
   const [bgImage, setBgImage] = useState('/images/bg-1.png'); // Default background image
-  
   const [showUpdateOptions, setShowUpdateOptions] = useState(false); // Toggle visibility of update options
   const [showEmailChange, setShowEmailChange] = useState(false); // Toggle visibility of email change options
   const [newEmail, setNewEmail] = useState('');
@@ -38,10 +37,8 @@ const AccountInfoPage = () => {
   const [fileInputRef, setFileInputRef] = useState(useRef(null)); // Create a ref for file input
 
   const [fileName, setFileName] = useState('');
-
   const [showNameEdit, setShowNameEdit] = useState(false);
   const [newName, setNewName] = useState('');
-
 
   const [showModal, setShowModal] = useState(false);
 
@@ -65,7 +62,7 @@ const AccountInfoPage = () => {
         // console.log('Fetched user data:', data); // Log fetched data
         setUser(data);
         setProfileImage(data.profileImage); // Ensure this is set from the fetched user data
-        setBgImage(data.backgroundImage || `${bgphoto}`); // Set default or user-specific background image
+        setBgImage(data.backgroundImage || '/images/bg-1.png'); // Set default or user-specific background image
       } catch (error) {
         // console.error('Error fetching profile:', error);
         localStorage.removeItem('authToken');
@@ -211,7 +208,6 @@ const AccountInfoPage = () => {
     setOtpSent(false); // Reset OTP state when toggling email change form
   };
 
-
   const handleBgImageChange = async (selectedImageUrl) => {
     try {
       const authToken = localStorage.getItem('authToken');
@@ -229,13 +225,14 @@ const AccountInfoPage = () => {
 
       // Update the background image URL in the state
       setUser((prevUser) => ({ ...prevUser, backgroundImage: selectedImageUrl }));
+      // alert('Background image updated successfully!');
       // Assuming the upload is successful, reload the page
       window.location.reload();
-      // alert('Background image updated successfully!');
     } catch (error) {
       console.error('Error updating background image:', error);
     }
   };
+
 
   return (
     <div className="min-h-screen relative bg-custom-bg">
@@ -249,37 +246,24 @@ const AccountInfoPage = () => {
           height: '100vh',
         }}
       ></div> */}
-      <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', }}>
-        <main className="relative z-10 container mx-auto mt-8 p-4">
+      <main className="relative z-10 container mx-auto mt-8 p-4">
         <div className="min-h-screen flex items-center justify-center">
           <div className="bg-white rounded shadow-md w-80 relative">
-            {/* <div className="image-container">
-              <img src={bgphoto} alt="bgphoto" className="w-full h-36 opacity-90 rounded-tl-md rounded-tr-md rounded-bl-none rounded-br-none" />
-            </div> */}
-             {/* <div
-              className="image-container w-full h-36 opacity-90 rounded-tl-md rounded-tr-md rounded-bl-none rounded-br-none"
-              style={{
-                backgroundImage: `url(${bgImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-            </div> */}
+
             {user ? (
               <>
-               <div
-              className="image-container w-full h-36 opacity-90 rounded-tl-md rounded-tr-md rounded-bl-none rounded-br-none"
-              style={{
-                backgroundImage: `url(${bgImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              {/* Additional content or child elements can go here */}
-            </div>
+                <div
+                  className="image-container w-full h-36 opacity-90 rounded-tl-md rounded-tr-md rounded-bl-none rounded-br-none"
+                  style={{
+                    backgroundImage: `url(${bgImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                >
+                  {/* Additional content or child elements can go here */}
+                </div>
                 <div className='pl-4 pr-4 pb-4'>
                   <div className="flex justify-center mb-4 relative">
-                    
                     {/* {profileImage ? (
                       <img
                         src={`${profileImage}`}
@@ -338,13 +322,12 @@ const AccountInfoPage = () => {
                     {showUpdateOptions ? 'Hide Update Options' : 'Update Options'}
                   </button>
 
-                  {/* Update Options */}
                   {showUpdateOptions && (
+
                     <div className="mt-4">
                       <button onClick={() => setShowModal(true)} className="w-full py-2 mb-2 bg-violet-500 text-white rounded hover:bg-violet-600">
-                        Update Cover Image
+                        Update Background Image
                       </button>
-
                       <button onClick={() => fileInputRef.current.click()} className="w-full py-2 mb-2 bg-violet-500 text-white rounded hover:bg-violet-600">
                         Update Photo
                       </button>
@@ -447,12 +430,10 @@ const AccountInfoPage = () => {
             )}
           </div>
         </div>
-        </main>
-      </section>
-    </div>
+      </main >
+    </div >
   );
 
 };
 
 export default AccountInfoPage;
-
