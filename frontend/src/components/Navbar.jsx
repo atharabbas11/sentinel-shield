@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 // import { FaBars, FaTimes, FaUser, FaSignOutAlt } from 'react-icons/fa';
 import { FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
-import profilePlaceholder from '../images/default-profile.jpg'; // Add a placeholder image if user doesn't have one
+import profilePlaceholder from '../images/default-profile.jpg'; // Add a profile placeholder image if user doesn't have one
 import LoadingBar from './LoadingBar';
 import logo from '../images/logo-wob.png';
 
@@ -110,17 +110,14 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
 
   return (
     <div>
-      <LoadingBar loading={loading} /> {/* Ensure the LoadingBar is rendered */}
+      <LoadingBar loading={loading} />
+      
       {/* Header Section */}
       <header className="bg-gradient-to-r from-blue-400 to-purple-500 text-white py-6 fixed top-0 w-full z-50">
         <div className="mx-auto flex justify-between items-center px-4">
 
           {/* Left Section: Logo */}
           {/* <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold cursor-pointer" onClick={() => handleNavigation('/')}>
-            Sentinel Shield
-          </h1> */}
-          {/* <img src={logo} alt="" style={{height: '50px', cursor: 'pointer', }}  onClick={() => handleNavigation('/')}/>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold cursor-pointer" onClick={() => handleNavigation('/')}>
             Sentinel Shield
           </h1> */}
           <div onClick={() => handleNavigation('/')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', }}>
