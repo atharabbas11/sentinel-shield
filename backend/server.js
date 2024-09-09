@@ -31,7 +31,7 @@ const allowedOrigin = process.env.ALLOWED_ORIGIN;
 // Configure CORS
 app.use(cors({
     origin: (origin, callback) => {
-        const allowedOrigins = ['https://sentinel-shield-frontend.onrender.com'];
+        // const allowedOrigins = ['https://sentinel-shield-frontend.onrender.com'];
         if (allowedOrigins.includes(origin) || !origin) {
             callback(null, true);
         } else {
