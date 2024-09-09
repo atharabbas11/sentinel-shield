@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../images/bglogin5.png';
-// import { BarLoader } from 'react-spinners';
-import LoadingBar from '../components/LoadingBar'; // Ensure the path is correct based on your project structure
+import LoadingBar from '../components/LoadingBar';
 const apiUrl = process.env.REACT_APP_API_URL;
 
 const ResetPasswordPage = () => {
