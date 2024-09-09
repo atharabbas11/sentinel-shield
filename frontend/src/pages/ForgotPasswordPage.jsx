@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../images/bglogin5.png';
-import LoadingBar from '../components/LoadingBar'; // Ensure the path is correct based on your project structure
+import LoadingBar from '../components/LoadingBar'; 
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -58,12 +58,7 @@ const ForgotPasswordPage = () => {
         ></div>
         <div className="relative z-10 min-h-screen flex items-center justify-center">
           <div className="bg-white p-8 rounded shadow-md w-80">
-            {/* <h2 className="text-2xl mb-6">Forgot Password</h2> */}
             <h2 className="text-3xl mb-3 font-bold text-center">Forgot Password</h2>
-            {/* <div className="mt-4 mb-6 text-sm text-gray-500 font-semibold text-center">
-              Remember your password?
-              <a href="/login" className="text-l text-blue-400"> login here</a>
-            </div> */}
             {!loggedIn && (
               <div className="mt-4 mb-6 text-sm text-gray-500 font-semibold text-center">
                 Remember your password?
