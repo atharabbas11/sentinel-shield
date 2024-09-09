@@ -51,17 +51,6 @@ const SteganographyPage = () => {
 
   return (
     <div className="min-h-screen bg-custom-bg">
-      {/* Initial image */}
-      {/* <div
-        className="fixed inset-0 z-0"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100vh',
-        }}
-      ></div> */}
-      {/* <section style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', }}> */}
         <main className="relative z-10 container mx-auto mt-8 p-4">
           <div className="container mx-auto pt-32 p-4">
             <h1 className="xl:text-5xl md:text-5xl text-3xl  text-center font-bold mb-10 text-white">Steganography</h1>
@@ -83,7 +72,6 @@ const SteganographyPage = () => {
             </div>
           </div>
         </main>
-      {/* </section> */}
     </div>
   );
 };
