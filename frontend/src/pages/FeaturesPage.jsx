@@ -116,18 +116,7 @@ const FeaturesPage = () => {
                       alt='feature3'
                     />
                   </div>
-              <div className="mt-12 sm:mt-16 lg:mt-0">
-                <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
-                  <img
-                    width="647" height="486"
-                    style={{ color: "transparent" }}
-                    className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                    src={feature1}
-                    alt='feature1'
-                  />
                 </div>
-              </div>
-            </div>
               </div>
             </div>
           </div>
