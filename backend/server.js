@@ -42,6 +42,9 @@ app.use(cors({
 //     allowedHeaders: ['Content-Type', 'Authorization']
 // }));
 
+// Trust the first proxy
+app.set('trust proxy', 1); // Use specific IPs if you prefer
+
 // Rate Limiting
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
