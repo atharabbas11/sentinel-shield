@@ -104,6 +104,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
       setMessage('');
       setLoading(false);
     }
+  }
 
   return (
     <div className="relative bg-custom-bg">
