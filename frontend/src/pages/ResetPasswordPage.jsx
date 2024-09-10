@@ -48,7 +48,7 @@ const ResetPasswordPage = () => {
 
   return (
     <div className="relative bg-custom-bg">
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="min-h-screen flex items-center justify-center">
       <LoadingBar loading={loading} />
       <section>
         <div
