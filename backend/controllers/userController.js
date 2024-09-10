@@ -81,7 +81,9 @@ const getUserProfile = asyncHandler(async (req, res) => {
 
         if (user) {
             // Construct the profile image URL with forward slashes
-            const profileImageUrl = user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
+            // const profileImageUrl = user.profileImage ? `${req.protocol}://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
+            const profileImageUrl = user.profileImage ? `https://${req.get('host')}/${user.profileImage.replace(/\\/g, '/')}` : null;
+
 
             // Output the raw background image path from the database
             const backgroundImagePath = user.backgroundImage || null;
