@@ -144,8 +144,8 @@ const HomePage = ({ isLoggedIn }) => {
                     <img
                       style={{ color: "transparent" }}
                       className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 h-56"
-                      src={feature2}
-                      alt='feature2'
+                      src={feature1}
+                      alt='feature1'
                     />
                     <p className='text-gray-300 font-sans text-base'>Secure your messages with cutting-edge encryption algorithms. Our technology guarantees complete privacy and protection, ensuring your communications remain confidential and shielded from unauthorized access for maximum security.</p>
                   </div>
