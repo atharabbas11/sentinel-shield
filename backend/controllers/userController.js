@@ -70,7 +70,7 @@ const authUser = asyncHandler(async (req, res) => {
             message: 'Login successful' // Include a success message
         });
     } else {
-        res.status(401).json({ message: 'Invalid email or password' }); // Include a failure message
+        res.status(401).json({ message: 'Invalid credentials' }); // Include a failure message
     }
 });
 
