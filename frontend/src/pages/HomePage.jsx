@@ -221,9 +221,6 @@ const HomePage = ({ isLoggedIn }) => {
                     Learn More
                   </button>
                 </div>
-                <button onClick={() => handleClickLoading('/contactus')} className="bg-blue-600 text-white px-4 py-2 rounded text-base font-semibold leading-7 hover:bg-blue-700 transition">
-                  Get Started
-                </button>
               </div>
             </div>
           </div>
