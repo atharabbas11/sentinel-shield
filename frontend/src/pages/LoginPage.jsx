@@ -129,7 +129,8 @@ const LoginPage = ({ setIsLoggedIn }) => {
           <div className="bg-white p-8 rounded shadow-md w-custom-340">
             <h2 className="text-3xl mb-6 font-bold text-center">Login</h2>
             {message && <div className="text-green-500 mb-4">{message}</div>}
-            {error && <div className="text-red-500 mb-4">{error}</div>}
+            {/* {error && <div className="text-red-500 mb-4">{error}</div>} */}
+            {error && <div className="mb-4 p-3 bg-red-500 text-white rounded font-semibold"> <p>{error}</p> </div>}
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <input
