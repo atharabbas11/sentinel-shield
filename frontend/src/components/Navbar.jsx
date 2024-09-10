@@ -122,7 +122,7 @@ const Navbar = ({ isLoggedIn, onSignOut }) => {
           </h1> */}
           <div onClick={() => handleNavigation('/')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', }}>
             <img src={logo} alt="Sentinel Shield" style={{ height: '56px', marginRight: '10px' }}/>
-            <h1 className="text-xl font-bold">Sentinel<br/> Shield</h1>
+            <h1 className="text-xl font-bold mr-24">Sentinel<br/> Shield</h1>
           </div>
 
           {/* Middle Section: Navigation Links */}
