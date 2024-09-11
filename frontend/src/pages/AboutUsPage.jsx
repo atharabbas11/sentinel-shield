@@ -47,7 +47,7 @@ const AboutUsPage = () => {
 
   return (
     <div className="min-h-screen relative bg-custom-bg">
-      <section style={{ backgroundImage: `url(${backgroundImage1})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', height: '100vh' }}>
+      <section style={{ backgroundImage: `url(${backgroundImage1})`, backgroundSize: 'auto', backgroundPosition: 'bottom', backgroundRepeat: 'repeat', minheight: '100vh' }}>
         <main className="relative z-10 container mx-auto mt-8 p-4">
           <section id="aboutus" className="my-12 mt-20" ref={featuresRef}>
             {/* About Section */}
