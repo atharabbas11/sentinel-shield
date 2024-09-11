@@ -5,6 +5,8 @@ const asyncHandler = require('express-async-handler');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const { sendRegistrationEmail } = require('../routes/emailService');
+
 const JWT_SECRET = process.env.JWT_SECRET; // jwt secret token
 const JWT_EXPIRATION = process.env.JWT_EXPIRATION || '30d'; // Configurable expiration time ( Adjust as needed eample: 1d 7d 14d...)
 
@@ -35,6 +37,13 @@ const registerUser = asyncHandler(async (req, res) => {
     });
 
     if (user) {
+        try {
+            await sendRegistrationEmail(user);
+        } catch (err) {
+            console.error('Failed to send registration email:', err);
+            // Optionally handle the error or notify admins
+        }
+
         res.status(201).json({
             _id: user._id,
             name: user.name,
