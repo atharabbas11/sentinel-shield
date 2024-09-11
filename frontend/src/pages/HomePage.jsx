@@ -236,7 +236,7 @@ const HomePage = ({ isLoggedIn }) => {
 
     <section id="contactus" className="container mx-auto my-12" ref={featuresRef}>
       {/* Contact Section */}
-      <div className="relative">
+      <div className="relative p-5">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
           <div className={`my-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 lg:col-start-2 ${isVisible.about ? 'slide-in-right' : ''}`}>
             <div>
