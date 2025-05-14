@@ -26,6 +26,7 @@ connectDB();
 app.use(helmet());
 
 const allowedOrigin = process.env.ALLOWED_ORIGIN;
+console.log("Allowed Origin:", allowedOrigin);
 
 // Configure CORS
 app.use(cors({
